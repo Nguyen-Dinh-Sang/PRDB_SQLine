@@ -1214,8 +1214,6 @@ namespace PRDB_Sqlite.GUI
             }
         }
 
-
-
         private void barButtonItemOpenRelation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
@@ -1249,7 +1247,6 @@ namespace PRDB_Sqlite.GUI
 
 
         }
-
 
         private void ribbonControl1_SelectedPageChanging(object sender, DevExpress.XtraBars.Ribbon.RibbonPageChangingEventArgs e)
         {
@@ -1523,6 +1520,7 @@ namespace PRDB_Sqlite.GUI
             }
         }
 
+        // Relation btn
         private void btn_Data_Next_Click(object sender, EventArgs e)
         {
             try
@@ -1637,7 +1635,6 @@ namespace PRDB_Sqlite.GUI
             SaveRelation();
 
         }
-
 
         private void SaveRelation()
         {
@@ -1813,8 +1810,6 @@ namespace PRDB_Sqlite.GUI
 
         }
 
-
-
         // Vào sau khi edit cell xong qua cell khác
         private void GridViewData_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -1954,10 +1949,6 @@ namespace PRDB_Sqlite.GUI
 
             return false;
         }
-
-
-
-
 
         private void GridViewData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -2242,18 +2233,20 @@ namespace PRDB_Sqlite.GUI
 
                 try
                 {
-
+                    Console.WriteLine(txtValue.Text);
                     errorProvider.SetError(txtMinProb, null);
                     errorProvider.SetError(txtMaxProb, null);
                     double minprob, maxprob;
                     string[] value;
-                    value = Stdize(txtValue.Text.Replace(Environment.NewLine, ",")).Split(',');
+                    value = Stdize(txtValue.Text.Trim()).Split(
+                                new string[] { Environment.NewLine },
+                                StringSplitOptions.None
+                            );
 
                     for (int i = 0; i < value.Length; i++)
                     {
                         value[i] = value[i].Trim();
                     }
-
 
                     minprob = Convert.ToDouble(txtMinProb.Text);
                     maxprob = Convert.ToDouble(txtMaxProb.Text);
@@ -2305,18 +2298,8 @@ namespace PRDB_Sqlite.GUI
                 }
                 catch
                 {
-
-
                 }
-
-
-
-
-
-
-
             }
-
         }
 
         private void btn_Value_AddNewRow_Click(object sender, EventArgs e)
@@ -2465,11 +2448,12 @@ namespace PRDB_Sqlite.GUI
             {
                 GridViewValue.Rows.Clear();
                 ProbTriple triple;
-                
-                if(GridViewData.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+
+                if (GridViewData.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     triple = new ProbTriple(GridViewData.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-                } else
+                }
+                else
                 {
                     triple = new ProbTriple();
                 }
@@ -2487,7 +2471,7 @@ namespace PRDB_Sqlite.GUI
                         GridViewValue.Rows[i].Cells[1].Value = triple.MinProb[i];
                         GridViewValue.Rows[i].Cells[2].Value = triple.MaxProb[i];
                     }
-                    
+
 
                     UpdateValueRowNumber();
                 }
@@ -2520,14 +2504,8 @@ namespace PRDB_Sqlite.GUI
             }
             catch (Exception ex)
             {
-                Console.WriteLine("==================================");
-                Console.WriteLine(ex.ToString());
-                Console.WriteLine("==================================");
             }
-
         }
-
-
 
         #endregion
 
@@ -2873,8 +2851,6 @@ namespace PRDB_Sqlite.GUI
             }
             catch (Exception)
             {
-
-
             }
         }
 

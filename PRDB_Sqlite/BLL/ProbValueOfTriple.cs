@@ -23,6 +23,7 @@ namespace PRDB_Sqlite.BLL
                 string[] singleValues = multiValue.Split(',');
                 for (int i = 0; i < singleValues.Length; i++)
                 {
+                    Console.WriteLine(singleValues[i]);
                     this.Value.Add(singleValues[i]);
                 }
             } else

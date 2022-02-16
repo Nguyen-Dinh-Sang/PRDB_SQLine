@@ -119,7 +119,7 @@ namespace PRDB_Sqlite.BLL
                     j1 = value[i].IndexOf('{');
                     j2 = value[i].IndexOf('}');
                     j3 = value[i].IndexOf('[');
-                    j4 = value[i].IndexOf(',');
+                    j4 = value[i].LastIndexOf(',');
                     j5 = value[i].IndexOf(']');
 
                   
@@ -216,7 +216,7 @@ namespace PRDB_Sqlite.BLL
                 j1 = value[i].IndexOf('{');
                 j2 = value[i].IndexOf('}');
                 j3 = value[i].IndexOf('[');
-                j4 = value[i].IndexOf(',');
+                j4 = value[i].LastIndexOf(',');
                 j5 = value[i].IndexOf(']');
                 if (j1 < 0 || j2 < 0 || j3 < 0 || j4 < 0 || j5 < 0) return false;
                 if (j1 >= j2 - 1) return false;
