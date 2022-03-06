@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace PRDB_Sqlite.BLL
 {
-    public  class SelectCondition
+    public class SelectCondition
     {
-     
+
         public ProbRelation relations { get; set; }
         public ProbTuple tuple { get; set; }
         public string conditionString { get; set; }
@@ -20,7 +20,6 @@ namespace PRDB_Sqlite.BLL
         {
             // TODO: Complete member initialization
             relations = probRelation;
-         
 
             int i = 0;
             while (i < conditionString.Length - 1)
@@ -47,14 +46,14 @@ namespace PRDB_Sqlite.BLL
         public bool CheckConditionString()
         {
             string str = this.conditionString.ToLower();
-            int indexI = 0;                           
-            
+            int indexI = 0;
+
             str = str.Trim();
 
             if (!str.Contains('(') || !str.Contains(')') || !str.Contains('[') || !str.Contains(']'))
             {
                 MessageError = "Incorrect syntax near the keyword 'where'.";
-                return false;             
+                return false;
             }
 
 
@@ -65,14 +64,14 @@ namespace PRDB_Sqlite.BLL
                 return false;
             }
 
-            if (str[str.Length  -1] != ']')
+            if (str[str.Length - 1] != ']')
             {
                 MessageError = "Incorrect syntax near the keyword 'where'.";
                 return false;
             }
-                
 
-            while (indexI < str.Length -1)
+
+            while (indexI < str.Length - 1)
             {
                 if (str[indexI] == '(')
                 {
@@ -111,7 +110,7 @@ namespace PRDB_Sqlite.BLL
                             break;
                         indexJ++;
                     }
-                 
+
                     if (indexJ == str.Length)
                     {
                         MessageError = "Incorrect syntax near the keyword 'where'.";
@@ -145,7 +144,7 @@ namespace PRDB_Sqlite.BLL
             }
 
 
-     
+
 
 
 
@@ -161,14 +160,14 @@ namespace PRDB_Sqlite.BLL
                 }
                 else result += S[i];
             return result;
-       
+
         }
         private static string converConditionStringToExpression(string conditionString)
         {
-          
+
             try
             {
-                return conditionString.Substring(conditionString.IndexOf("("), conditionString.IndexOf(")") - conditionString.IndexOf("(") + 1);           
+                return conditionString.Substring(conditionString.IndexOf("("), conditionString.IndexOf(")") - conditionString.IndexOf("(") + 1);
 
             }
             catch (Exception)
@@ -176,7 +175,7 @@ namespace PRDB_Sqlite.BLL
 
                 return string.Empty;
             }
-        
+
         }
         private static List<double> convertConditionStringToProbInterVal(string S)
         {
@@ -194,7 +193,7 @@ namespace PRDB_Sqlite.BLL
                 interval.Add(Convert.ToDouble(_MinProb));
                 interval.Add(Convert.ToDouble(_MaxProb));
                 return interval;
-            
+
             }
             catch (Exception)
             {
@@ -205,15 +204,15 @@ namespace PRDB_Sqlite.BLL
         }
         private bool IsSelectionExpression(string conditionString)
         {
-           
+
             if (conditionString.Contains(" and ") || conditionString.Contains(" or ") || conditionString.Contains(" not "))
                 return false;
 
 
-            string str = conditionString.Substring(conditionString.IndexOf("(") + 1, conditionString.IndexOf(")") - 1); 
+            string str = conditionString.Substring(conditionString.IndexOf("(") + 1, conditionString.IndexOf(")") - 1);
             if (str == string.Empty || str.Contains("(") || str.Contains(")"))
                 return false;
-     
+
 
             if (SelectCondition.convertConditionStringToProbInterVal(conditionString) == null)
                 return false;
@@ -226,7 +225,7 @@ namespace PRDB_Sqlite.BLL
 
 
                 int index = -1;
-                for (int i = 0; i < str.Length -1; i++)
+                for (int i = 0; i < str.Length - 1; i++)
                 {
                     if (str[i] == ' ' && str[i + 1] == '\'')
                     {
@@ -250,8 +249,8 @@ namespace PRDB_Sqlite.BLL
                     {
                         if (isCompareOperator(arrayStr[i]))
                         {
-                            k = i +1;
-                            break;  
+                            k = i + 1;
+                            break;
                         }
                     }
 
@@ -261,11 +260,11 @@ namespace PRDB_Sqlite.BLL
                         valueError += arrayStr[i] + " ";
                     }
 
-                    MessageError = "Unclosed quotation mark before the character string " + valueError;                               
+                    MessageError = "Unclosed quotation mark before the character string " + valueError;
                     return false;
                 }
-                      
-                
+
+
 
 
             }
@@ -273,14 +272,14 @@ namespace PRDB_Sqlite.BLL
             {
                 arrayStr.AddRange(str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
             }
-            
+
 
             for (int i = 1; i < arrayStr.Count - 1; i++)
             {
                 if (Operator.Contains(arrayStr[i]) && (Operator.Contains(arrayStr[i - 1]) || Operator.Contains(arrayStr[i + 1])))
                 {
                     MessageError = "Incorrect syntax near the keyword 'where'.";
-                    return false; 
+                    return false;
                 }
 
 
@@ -313,7 +312,7 @@ namespace PRDB_Sqlite.BLL
                 if (conditionStr[i] == '(')
                 {
                     j = i + 1;
-                    while (j < conditionStr.Length )
+                    while (j < conditionStr.Length)
                     {
                         if (conditionStr[j] == ']')
                         {
@@ -342,7 +341,8 @@ namespace PRDB_Sqlite.BLL
             conditionStr = conditionStr.Replace("and", "&");
             conditionStr = conditionStr.Replace("or", "|");
             conditionStr = conditionStr.Replace("not", "!");
-            List<string> rpn = SC_PostfixNotation(conditionStr);            // reverse to postfix notation 
+            List<string> rpn = SC_PostfixNotation(conditionStr);     // reverse to postfix notation 
+
             return CalculateCondition(rpn);
         }
 
@@ -413,26 +413,26 @@ namespace PRDB_Sqlite.BLL
                     O.Add(array[i]);
                 else
                     if (array[i].CompareTo(")") == 0)
+                {
+                    while (O.Count > 0 && O[O.Count - 1].CompareTo("(") != 0)
                     {
-                        while (O.Count > 0 && O[O.Count - 1].CompareTo("(") != 0)
-                        {
-                            V.Add(O[O.Count - 1]);     // V.Add(" " + O[O.Count - 1] + " ");
-                            O.RemoveAt(O.Count - 1);
-                        }
-                        O.RemoveAt(O.Count - 1);      // remove '('
+                        V.Add(O[O.Count - 1]);     // V.Add(" " + O[O.Count - 1] + " ");
+                        O.RemoveAt(O.Count - 1);
                     }
-                    else
+                    O.RemoveAt(O.Count - 1);      // remove '('
+                }
+                else
                         if (Operator.Contains(array[i]))        // nếu là operator
-                        {
-                            while (O.Count > 0 && Priority(O[O.Count - 1]) >= Priority(array[i]))
-                            {
-                                V.Add(O[O.Count - 1]);        // V.Add(" " + O[O.Count - 1] + " ");
-                                O.RemoveAt(O.Count - 1);
-                            }
-                            O.Add(array[i]);
-                        }
-                        else
-                            V.Add(array[i]);           // nếu là value
+                {
+                    while (O.Count > 0 && Priority(O[O.Count - 1]) >= Priority(array[i]))
+                    {
+                        V.Add(O[O.Count - 1]);        // V.Add(" " + O[O.Count - 1] + " ");
+                        O.RemoveAt(O.Count - 1);
+                    }
+                    O.Add(array[i]);
+                }
+                else
+                    V.Add(array[i]);           // nếu là value
             }
 
 
@@ -443,7 +443,7 @@ namespace PRDB_Sqlite.BLL
                 O.RemoveAt(O.Count - 1);
             }
 
-           
+
 
             return V;
         }
@@ -481,7 +481,7 @@ namespace PRDB_Sqlite.BLL
             for (int i = 0; i < array.Count; i++)
                 if (!Operator.Contains(array[i]))
                 {
-                     stack.Add(array[i]);
+                    stack.Add(array[i]);
                 }
                 else         // Lấy hai giá trị ra khỏi stack và tính toán
                 {
@@ -492,9 +492,9 @@ namespace PRDB_Sqlite.BLL
 
                     string value = GetProbInterval(valueOne, valueTwo, array[i].Trim());
                     if (value == string.Empty)
-                    {                      
+                    {
                         this.conditionString = string.Empty;
-                        return false;                     
+                        return false;
                     }
                     stack.Add(value);
                 }
@@ -511,20 +511,115 @@ namespace PRDB_Sqlite.BLL
             double minProb = Convert.ToDouble(StrProb[0]);
             double maxProb = Convert.ToDouble(StrProb[1]);
 
-       
+
 
             return (L <= minProb && maxProb <= U); // trả về true nếu khoảng xác biểu thức chọn thỏa mãn xác xuất câu truy vấn
         }
         private string GetProbInterval(string valueOne, string valueTwo, string operaterStr)
         {
+            /*
+             * (patient.Id = '1')[1,1]
+             * valueOne: thuộc tính (patient.ID), valueTwo: giá trị(1), operaterStr: biểu thức(=)
+             */
+
+            Console.WriteLine("GetProbInterval " + valueOne + "/" + valueTwo + "/" + operaterStr);
             double minProb = 0, maxProb = 0;
             int indexOne, indexTwo, countTripleOne, countTripleTwo;
             ProbTuple tuple = this.tuple;
             string typenameOne;
             string typenameTwo;
+
+
+            try
+            {
+                // Biểu thức so sánh bằng giữa hai thuộc tính trên cùng một bộ
+                if (operaterStr.Contains("equal_ig") || operaterStr.Contains("equal_in") || operaterStr.Contains("equal_me"))        
+                {
+
+                }
+                else
+                {
+                    // Biểu thức so sánh giữa một thuộc tính với một giá trị
+                    if (SelectCondition.isCompareOperator(operaterStr))
+                    {
+                        Console.WriteLine("GetProbInterval 1");
+                        indexOne = this.IndexOf(valueOne); // vị trí của thuộc tính trong ds các thuộc tính
+                        if (indexOne == -1)
+                            return string.Empty;
+
+                        if (valueTwo.Contains("'"))
+                        {
+                            int count = valueTwo.Split(new char[] { '\'' }).Length - 1;
+
+                            if (valueTwo.Substring(0, 1) != "'")
+                            {
+                                MessageError = "Unclosed quotation mark before the character string " + valueTwo;
+                                return string.Empty;
+                            }
+
+                            if (valueTwo.Substring(valueTwo.Length - 1, 1) != "'")
+                            {
+                                MessageError = "Unclosed quotation mark after the character string " + valueTwo;
+                                return string.Empty;
+                            }
+
+                            if (count != 2)
+                            {
+                                MessageError = "Unclosed quotation mark at the character string " + valueTwo;
+                                return string.Empty;
+                            }
+
+                            valueTwo = valueTwo.Remove(0, 1);
+                            valueTwo = valueTwo.Remove(valueTwo.Length - 1, 1);
+                        }
+
+                        countTripleOne = tuple.Triples[indexOne].Value2.Count; // số lượng các cặp xác xuất trong thuộc tính
+                        typenameOne = Attributes[indexOne].Type.DataType;
+
+                        ProbDataType dataType = new ProbDataType();
+                        dataType.TypeName = Attributes[indexOne].Type.TypeName;
+                        dataType.DataType = Attributes[indexOne].Type.DataType;
+                        dataType.Domain = Attributes[indexOne].Type.Domain;
+                        dataType.DomainString = Attributes[indexOne].Type.DomainString;
+
+                        if (!dataType.CheckDataTypeOfVariables(valueTwo))
+                        {
+                            MessageError = String.Format("Conversion failed when converting the varchar value {0} to data type {1}.", valueTwo, typenameOne);
+                            return string.Empty;
+                        }
+
+                        // Duyệt các hàng
+                        for (int i = 0; i < countTripleOne; i++)
+                        {
+                            // Tập hợp trong 1 bộ 3
+                            ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
+                            
+                            for(int j = 0; j < valueOfTriple.Value.Count; j++)
+                            {
+                                // duyệt từng cặp xác xuất và so sánh
+                                if (this.CompareTriple(valueOfTriple.Value[j].ToString().Trim(), valueTwo.Trim(), operaterStr, typenameOne))
+                                {
+                                    minProb += tuple.Triples[indexOne].MinProb[i];
+                                    maxProb += tuple.Triples[indexOne].MaxProb[i];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else                     // Biểu thức kết hợp giữa hai khoảng xác suất
+                    {
+                        Console.WriteLine("GetProbInterval 2");
+                    }
+                }
+            }
+            catch
+            {
+                MessageError = "Incorrect syntax near 'where'.";
+                return string.Empty;
+            }
+
             maxProb = 1 > maxProb ? maxProb : 1; // check maxProb
             return (String.Format("[{0},{1}]", minProb, maxProb));
-
         }
 
         /*
@@ -694,6 +789,7 @@ namespace PRDB_Sqlite.BLL
 
         } 
         */
+
         public int IndexOf(string S)
         {
             string value = S.Trim().ToLower();
@@ -719,12 +815,12 @@ namespace PRDB_Sqlite.BLL
                     if (value == Attributes[i].AttributeName.ToLower())
                     {
                         return i;
-                    }                
+                    }
                 }
 
                 MessageError = String.Format("Invalid attribute name '{0}'.", arr[1]);
                 return -1;
-                
+
             }
             else
             {
@@ -750,14 +846,14 @@ namespace PRDB_Sqlite.BLL
                     return -1;
                 }
 
-                return indexAttributeS;                
+                return indexAttributeS;
             }
 
         }
 
         #endregion
 
-            
+
 
         #region những hàm compare
         public static bool isCompareOperator(string S)
@@ -823,7 +919,7 @@ namespace PRDB_Sqlite.BLL
                 case "!=": return (Math.Abs(valueOne - valueTwo) > 0.001);
                 default: return false;
             }
-            
+
         }
         public static bool BoolCompare(bool valueOne, bool valueTwo, string OpratorStr)
         {
@@ -833,7 +929,7 @@ namespace PRDB_Sqlite.BLL
                 case "!=": return (valueOne != valueTwo);
                 default: return false;
             }
-   
+
         }
         public bool CompareTriple(object valueOne, string valueTwo, string opratorStr, string typename)
         {
@@ -843,22 +939,22 @@ namespace PRDB_Sqlite.BLL
                 case "Int64":
                 case "Int32":
                 case "Byte":
-                case "Currency": 
-                                return IntCompare(Convert.ToInt16(valueOne), Convert.ToInt16(valueTwo), opratorStr);
+                case "Currency":
+                    return IntCompare(Convert.ToInt16(valueOne), Convert.ToInt16(valueTwo), opratorStr);
                 case "String":
                 case "DateTime":
                 case "UserDefined":
-                case "Binary": 
-                                return StrCompare(valueOne.ToString(), valueTwo, opratorStr);
+                case "Binary":
+                    return StrCompare(valueOne.ToString(), valueTwo, opratorStr);
                 case "Decimal":
                 case "Single":
-                case "Double": 
-                                return DoubleCompare((double)valueOne, Convert.ToDouble(valueTwo), opratorStr);
-                case "Boolean": 
-                                return BoolCompare((bool)valueOne, Convert.ToBoolean(valueTwo), opratorStr);
+                case "Double":
+                    return DoubleCompare((double)valueOne, Convert.ToDouble(valueTwo), opratorStr);
+                case "Boolean":
+                    return BoolCompare((bool)valueOne, Convert.ToBoolean(valueTwo), opratorStr);
                 default: return false;
             }
-  
+
         }
         #endregion
 
@@ -871,13 +967,15 @@ namespace PRDB_Sqlite.BLL
             string valueOne, valueTwo;
 
             for (int i = 0; i < Str.Count; i++)
+            {
                 if (Str[i].CompareTo("!") == 0)
                 {
                     valueOne = stack[stack.Count - 1].Trim();
                     stack.RemoveAt(stack.Count - 1);
-                    stack.Add( (valueOne.CompareTo("1") == 0) ? "0" : "1");
+                    stack.Add((valueOne.CompareTo("1") == 0) ? "0" : "1");
                 }
-                else 
+                else
+                {
                     if (Str[i].CompareTo("&") == 0 || Str[i].CompareTo("|") == 0)         // Lấy hai giá trị ra khỏi stack và tính toán
                     {
                         valueTwo = stack[stack.Count - 1].Trim();
@@ -893,8 +991,12 @@ namespace PRDB_Sqlite.BLL
                             default: break;
                         }
                     }
-                    else 
-                        stack.Add(Str[i]);          // Nếu là giá trị thì add vào stack
+                    else
+                    {
+                        stack.Add(Str[i]);  // Nếu là giá trị thì add vào stack
+                    }
+                }
+            }
 
             return (stack[0].CompareTo("1") == 0);
         }
@@ -914,30 +1016,30 @@ namespace PRDB_Sqlite.BLL
 
             for (int i = 0; i < A.Length; i++)
             {
-                if (A[i].CompareTo("(") == 0) 
+                if (A[i].CompareTo("(") == 0)
                     O.Add(A[i]);
-                else 
+                else
                     if (A[i].CompareTo(")") == 0)
+                {
+                    while (O.Count > 0 && O[O.Count - 1].CompareTo("(") != 0)
                     {
-                        while (O.Count > 0 && O[O.Count - 1].CompareTo("(") != 0)
-                        {
-                            V.Add(O[O.Count - 1]);     // V.Add(" " + O[O.Count - 1] + " ");
-                            O.RemoveAt(O.Count - 1);
-                        }
-                        O.RemoveAt(O.Count - 1);      // remove '('
+                        V.Add(O[O.Count - 1]);     // V.Add(" " + O[O.Count - 1] + " ");
+                        O.RemoveAt(O.Count - 1);
                     }
-                    else 
+                    O.RemoveAt(O.Count - 1);      // remove '('
+                }
+                else
                         if (A[i].CompareTo("&") == 0 || A[i].CompareTo("|") == 0 || A[i].CompareTo("!") == 0)        // operator
-                        {
-                            while (O.Count > 0 && Priority(O[O.Count - 1]) >= Priority(A[i]))
-                            {
-                                V.Add(O[O.Count - 1]);        // V.Add(" " + O[O.Count - 1] + " ");
-                                O.RemoveAt(O.Count - 1);
-                            }
-                            O.Add(A[i]);
-                        }
-                        else 
-                            V.Add(A[i]);           // value
+                {
+                    while (O.Count > 0 && Priority(O[O.Count - 1]) >= Priority(A[i]))
+                    {
+                        V.Add(O[O.Count - 1]);        // V.Add(" " + O[O.Count - 1] + " ");
+                        O.RemoveAt(O.Count - 1);
+                    }
+                    O.Add(A[i]);
+                }
+                else
+                    V.Add(A[i]);           // value
             }
 
 

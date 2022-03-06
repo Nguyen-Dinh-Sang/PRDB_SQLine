@@ -587,7 +587,6 @@ namespace PRDB_Sqlite.GUI
             }
             catch (Exception ex)
             {
-                Console.Write(ex);
             }
         }
 
@@ -2233,7 +2232,6 @@ namespace PRDB_Sqlite.GUI
 
                 try
                 {
-                    Console.WriteLine(txtValue.Text);
                     errorProvider.SetError(txtMinProb, null);
                     errorProvider.SetError(txtMaxProb, null);
                     double minprob, maxprob;
@@ -2864,6 +2862,7 @@ namespace PRDB_Sqlite.GUI
             }
         }
 
+        // Excute query button
         private void barButtonItemExcuteQuery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ExecuteQuery();
@@ -2873,24 +2872,14 @@ namespace PRDB_Sqlite.GUI
         {
             try
             {
-
-
                 GridViewResult.Rows.Clear();
                 GridViewResult.Columns.Clear();
-
-                //if (txtQuery.Text.Trim().Length <= 0)
-                //{
-                //    MessageBox.Show("Query does not exist!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
-
 
                 QueryExecution query = new QueryExecution(txtQuery.Text, this.probDatabase);
                 txtMessage.Text = "";
 
                 if (query.ExecuteQuery())
                 {
-
                     txtMessage.Text = string.Empty;
 
                     if (query.relationResult.tuples.Count <= 0)
@@ -2918,37 +2907,22 @@ namespace PRDB_Sqlite.GUI
 
                             foreach (ProbTriple triple in tuple.Triples)
                             {
-
                                 GridViewResult.Rows[i].Cells[j++].Value = triple.GetStrValue();
-
                             }
                         }
 
                         xtraTabControlQueryResult.SelectedTabPageIndex = 0;
-
                     }
-
-
                 }
                 else
                 {
-
                     txtMessage.Text = query.MessageError;
                     xtraTabControlQueryResult.SelectedTabPageIndex = 1;
-
-
-
-
-
-
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
             finally
             {

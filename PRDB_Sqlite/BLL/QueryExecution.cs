@@ -32,7 +32,6 @@ namespace PRDB_Sqlite.BLL
 
       private static string StandardizeQuery(string queryString)
        {
-           
            try
            {
                string result = "";
@@ -48,13 +47,11 @@ namespace PRDB_Sqlite.BLL
 
                result = result.Replace("\n", " ");
                return result.ToLower();
-             
            }
            catch (Exception)
            {              
                return null;
            }
-
        }
        
     
@@ -100,20 +97,21 @@ namespace PRDB_Sqlite.BLL
 
            return relation;           
        }
-       
-
        private static ProbTriple JoinTwoTriple(ProbTriple tripleOne, ProbTriple tripleTwo, ProbAttribute attribute, string OperationNaturalJoin)
        {
            ProbTriple triple = new ProbTriple();
-           return triple.Value2.Count <= 0 ? null : triple;
 
-       }
-
-        /*
-        private static ProbTriple JoinTwoTriple(ProbTriple tripleOne, ProbTriple tripleTwo, ProbAttribute attribute, string OperationNaturalJoin)
-       {
-           ProbTriple triple = new ProbTriple();
+            for (int i = 0; i < tripleOne.Value2.Count; i++)
+            {
+                var valueOfTripleOne = tripleOne.Value2[i].Value;
+                for (int ii = 0; i < valueOfTripleOne.Count; ii++)
+                {
+                    var valueOfNewTripleOne = valueOfTripleOne[ii];
+                    Console.WriteLine(valueOfTripleOne + "---" + valueOfNewTripleOne);
+                }
+            }
         
+            /*
            for (int i = 0; i < tripleOne.Value.Count; i++)
            {
                for (int j = 0; j < tripleTwo.Value.Count; j++)
@@ -151,11 +149,10 @@ namespace PRDB_Sqlite.BLL
                }
            }
 
+            */
+           return triple.Value2.Count <= 0 ? null : triple;
 
-           return triple.Value.Count <= 0 ? null : triple;
-
-       } 
-        */
+       }
 
         private ProbRelation NaturalJoin()
        {
@@ -886,9 +883,7 @@ namespace PRDB_Sqlite.BLL
                }
                else
                {
-
-
-
+                   // Đang làm dỡ phần này
                    SelectCondition Condition = new SelectCondition(this.selectedRelations[0], this.conditionString);
                    if (!Condition.CheckConditionString())
                    {
@@ -897,11 +892,10 @@ namespace PRDB_Sqlite.BLL
                    }
 
                    foreach (ProbTuple tuple in this.selectedRelations[0].tuples)
-                       if (Condition.Satisfied(tuple))
-                           this.relationResult.tuples.Add(tuple);
-
-                  
-
+                    {
+                        if (Condition.Satisfied(tuple))
+                            this.relationResult.tuples.Add(tuple);
+                    }
 
                    if (Condition.MessageError != string.Empty)
                    {
@@ -918,20 +912,12 @@ namespace PRDB_Sqlite.BLL
                    this.relationResult.Scheme = this.selectedRelations[0].Scheme;
                    this.relationResult = getRelationBySelectAttribute(this.relationResult, this.selectedAttributes);
                }
-
-
-
-
            }
            catch 
            {
-              
                return false;
            }
-         
-
            return true;
        }
-    
    }
 }
