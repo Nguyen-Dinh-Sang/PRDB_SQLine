@@ -103,55 +103,52 @@ namespace PRDB_Sqlite.BLL
 
             for (int i = 0; i < tripleOne.Value2.Count; i++)
             {
-                var valueOfTripleOne = tripleOne.Value2[i].Value;
-                for (int ii = 0; i < valueOfTripleOne.Count; ii++)
+                // Tập hợp trong 1 bộ 3
+                ValueOfTriple valueOfTriple = tripleOne.Value2[i];
+
+                for (int ii = 0; ii < valueOfTriple.Value.Count; ii++)
                 {
-                    var valueOfNewTripleOne = valueOfTripleOne[ii];
-                    Console.WriteLine(valueOfTripleOne + "---" + valueOfNewTripleOne);
+                    for (int j = 0; j < tripleTwo.Value2.Count; j++)
+                    {
+                        // Tập hợp trong 1 bộ 3
+                        ValueOfTriple valueOfTriple2 = tripleTwo.Value2[j];
+
+                        for (int jj = 0; jj < valueOfTriple2.Value.Count; jj++)
+                        {
+                            if (SelectCondition.EQUAL(valueOfTriple.Value[ii].ToString().Trim(), valueOfTriple2.Value[jj].ToString().Trim(), attribute.Type.DataType))
+                            {
+                                switch (OperationNaturalJoin)
+                                {
+                                    case "in":
+                                        triple.Value2.Add(tripleOne.Value2[i]);
+                                        triple.MinProb.Add(tripleOne.MinProb[i] * tripleTwo.MinProb[j]);
+                                        triple.MaxProb.Add(tripleOne.MaxProb[i] * tripleTwo.MaxProb[j]);
+
+                                        break;
+
+                                    case "ig":
+
+                                        triple.Value2.Add(tripleOne.Value2[i]);
+                                        triple.MinProb.Add(Math.Max(0, tripleOne.MinProb[i] + tripleTwo.MinProb[j] - 1));
+                                        triple.MaxProb.Add(Math.Min(tripleOne.MaxProb[i], tripleTwo.MaxProb[j]));
+                                        break;
+
+                                    case "me":
+
+                                        triple.Value2.Add(tripleOne.Value2[i]);
+                                        triple.MinProb.Add(0);
+                                        triple.MaxProb.Add(0);
+                                        break;
+                                    default: break;
+                                }
+
+                            }
+                        }
+                    }
                 }
             }
-        
-            /*
-           for (int i = 0; i < tripleOne.Value.Count; i++)
-           {
-               for (int j = 0; j < tripleTwo.Value.Count; j++)
-               {
-                   if (SelectCondition.EQUAL(tripleOne.Value[i].ToString().Trim(), tripleTwo.Value[j].ToString().Trim(), attribute.Type.DataType))
-                   {
-                       switch (OperationNaturalJoin)
-                       {
-                           case "in":
-                               triple.Value.Add(tripleOne.Value[i]);
-                               triple.MinProb.Add( tripleOne.MinProb[i] * tripleTwo.MinProb[j]);
-                               triple.MaxProb.Add( tripleOne.MaxProb[i] * tripleTwo.MaxProb[j]);
-                      
-                               break;
 
-                           case "ig":
-                               
-                               triple.Value.Add(tripleOne.Value[i]);
-                               triple.MinProb.Add( Math.Max(0, tripleOne.MinProb[i] + tripleTwo.MinProb[j]  - 1) );
-                               triple.MaxProb.Add( Math.Min( tripleOne.MaxProb[i] , tripleTwo.MaxProb[j] )       );
-                               break;
-
-                           case "me":
-                               
-                               triple.Value.Add(tripleOne.Value[i]);
-                               triple.MinProb.Add( 0 );
-                               triple.MaxProb.Add( 0 );
-                               break;
-                           default: break;
-                       }
-
-                        
-                   }
-
-               }
-           }
-
-            */
-           return triple.Value2.Count <= 0 ? null : triple;
-
+            return triple.Value2.Count <= 0 ? null : triple;
        }
 
         private ProbRelation NaturalJoin()
@@ -714,16 +711,11 @@ namespace PRDB_Sqlite.BLL
                    }
                    catch (Exception)
                    {
-                       
-                      
                    }
-
-
                }
            }
                                
            return probRelations;
-       
        }
        private static string GetCondition(string valueString)
        {

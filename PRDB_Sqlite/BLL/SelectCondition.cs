@@ -12,7 +12,7 @@ namespace PRDB_Sqlite.BLL
         public ProbRelation relations { get; set; }
         public ProbTuple tuple { get; set; }
         public string conditionString { get; set; }
-        static public string[] Operator = new string[15] { "_<", "_>", "<=", ">=", "_=", "!=", "⊗_in", "⊗_ig", "⊗_me", "⊕_in", "⊕_ig", "⊕_me", "equal_in", "equal_ig", "equal_me" };
+        static public string[] Operator = new string[18] { "_<", "_>", "<=", ">=", "_=", "!=", "⊗_in", "⊗_ig", "⊗_me", "⊕_in", "⊕_ig", "⊕_me", "equal_in", "equal_ig", "equal_me", "⊖_ig", "⊖_in", "⊖_me"};
         private readonly List<ProbAttribute> Attributes = new List<ProbAttribute>();
         public string MessageError { get; set; }
 
@@ -379,6 +379,11 @@ namespace PRDB_Sqlite.BLL
             Str = Str.Replace("equal_in", "|equal_in|");
             Str = Str.Replace("equal_ig", "|equal_ig|");
             Str = Str.Replace("equal_me", "|equal_me|");
+            
+            //
+            Str = Str.Replace("⊖_ig", "|⊖_ig|");
+            Str = Str.Replace("⊖_in", "|⊖_in|");
+            Str = Str.Replace("⊖_me", "|⊖_me|");
 
             while (Str[0] == '|') Str = Str.Remove(0, 1);
 
@@ -465,7 +470,10 @@ namespace PRDB_Sqlite.BLL
                 case "⊗_me":
                 case "⊕_in":
                 case "⊕_ig":
-                case "⊕_me": return 2;
+                case "⊕_me": 
+                case "⊖_ig":
+                case "⊖_in":
+                case "⊖_me": return 2;
                 case "|":
                 case "&": return 2;
                 case "!": return 3;
@@ -535,7 +543,64 @@ namespace PRDB_Sqlite.BLL
                 // Biểu thức so sánh bằng giữa hai thuộc tính trên cùng một bộ
                 if (operaterStr.Contains("equal_ig") || operaterStr.Contains("equal_in") || operaterStr.Contains("equal_me"))        
                 {
+                    indexOne = IndexOf(valueOne);
+                    indexTwo = IndexOf(valueTwo);
+                    if (indexOne == -1 || indexTwo == -1)
+                        return string.Empty;
 
+
+
+                    countTripleOne = tuple.Triples[indexOne].Value2.Count;
+                    countTripleTwo = tuple.Triples[indexTwo].Value2.Count;
+                    typenameOne = Attributes[indexOne].Type.DataType;
+                    typenameTwo = Attributes[indexTwo].Type.DataType;
+
+                    if (typenameOne != typenameTwo)
+                    {
+                        //Attribute value does not match the data type !
+                        MessageError = String.Format("Error :{0} and {1} must  the same data type", valueOne, valueTwo);
+                        return string.Empty;
+                    }
+
+
+                    for (int i = 0; i < countTripleOne; i++)
+                    {
+                        // Tập hợp trong 1 bộ 3
+                        ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
+
+                        for (int ii = 0; ii < valueOfTriple.Value.Count; ii++)
+                        {
+                            for (int j = 0; j < countTripleTwo; j++)
+                            {
+                                // Tập hợp trong 1 bộ 3
+                                ValueOfTriple valueOfTriple2 = tuple.Triples[indexTwo].Value2[j];
+
+                                for (int jj = 0; jj < valueOfTriple2.Value.Count; jj++)
+                                {
+                                    if (EQUAL(valueOfTriple.Value[ii].ToString().Trim(), valueOfTriple2.Value[jj].ToString().Trim(), typenameOne))
+                                    {
+                                        switch (operaterStr)
+                                        {
+                                            case "equal_in":
+                                                minProb += tuple.Triples[indexOne].MinProb[i] * tuple.Triples[indexTwo].MinProb[j];
+                                                maxProb = Math.Min(1, maxProb + tuple.Triples[indexOne].MaxProb[i] * tuple.Triples[indexTwo].MaxProb[j]);
+                                                break;
+
+                                            case "equal_ig":
+                                                minProb += Math.Min(0, tuple.Triples[indexOne].MinProb[i] + tuple.Triples[indexTwo].MinProb[j] - 1);
+                                                maxProb = Math.Min(1, maxProb + Math.Min(tuple.Triples[indexOne].MaxProb[i], tuple.Triples[indexTwo].MaxProb[j]));
+                                                break;
+                                            case "equal_me":
+                                                minProb = 0;
+                                                maxProb = Math.Min(1, maxProb + 0);
+                                                break;
+                                            default: break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -608,145 +673,6 @@ namespace PRDB_Sqlite.BLL
                     }
                     else                     // Biểu thức kết hợp giữa hai khoảng xác suất
                     {
-                        Console.WriteLine("GetProbInterval 2");
-                    }
-                }
-            }
-            catch
-            {
-                MessageError = "Incorrect syntax near 'where'.";
-                return string.Empty;
-            }
-
-            maxProb = 1 > maxProb ? maxProb : 1; // check maxProb
-            return (String.Format("[{0},{1}]", minProb, maxProb));
-        }
-
-        /*
-         private string GetProbInterval(string valueOne, string valueTwo, string operaterStr)
-        {
-            double minProb = 0, maxProb = 0;
-            int indexOne, indexTwo, countTripleOne, countTripleTwo;
-            ProbTuple tuple = this.tuple;
-            string typenameOne;
-            string typenameTwo;
-
-
-            try
-            {
-                if (operaterStr.Contains("equal_ig") || operaterStr.Contains("equal_in") || operaterStr.Contains("equal_me"))         // Biểu thức so sánh bằng giữa hai thuộc tính trên cùng một bộ
-                {
-                    
-
-                    indexOne = IndexOf(valueOne);
-                    indexTwo = IndexOf(valueTwo);
-                    if (indexOne == -1 || indexTwo == -1)
-                         return string.Empty;
-                    
-                         
-                    
-                    countTripleOne = tuple.Triples[indexOne].Value.Count;
-                    countTripleTwo = tuple.Triples[indexTwo].Value.Count;
-                    typenameOne = Attributes[indexOne].Type.DataType;
-                    typenameTwo = Attributes[indexTwo].Type.DataType;
-
-                    if (typenameOne != typenameTwo)
-                    {
-                        //Attribute value does not match the data type !
-                        MessageError = String.Format("Error :{0} and {1} must  the same data type", valueOne, valueTwo);
-                        return string.Empty;
-                    }
-
-
-                    for (int i = 0; i < countTripleOne; i++)
-                        for (int j = 0; j < countTripleTwo; j++)
-                            if (EQUAL(tuple.Triples[indexOne].Value[i].ToString().Trim(), tuple.Triples[indexTwo].Value[j].ToString().Trim(), typenameOne))
-                                switch (operaterStr)
-                                {
-                                    case "equal_in":
-                                        minProb += tuple.Triples[indexOne].MinProb[i] * tuple.Triples[indexTwo].MinProb[j];
-                                        maxProb = Math.Min(1, maxProb + tuple.Triples[indexOne].MaxProb[i] * tuple.Triples[indexTwo].MaxProb[j]);
-                                        break;
-
-                                    case "equal_ig":
-                                        minProb += Math.Min(0, tuple.Triples[indexOne].MinProb[i] + tuple.Triples[indexTwo].MinProb[j] - 1);
-                                        maxProb = Math.Min(1, maxProb + Math.Min(tuple.Triples[indexOne].MaxProb[i], tuple.Triples[indexTwo].MaxProb[j]));
-                                        break;
-                                    case "equal_me":
-                                        minProb = 0;
-                                        maxProb = Math.Min(1, maxProb + 0);
-                                        break;
-                                    default: break;
-                                }
-                }
-                else
-                    if (SelectCondition.isCompareOperator(operaterStr) )     // Biểu thức so sánh giữa một thuộc tính với một giá trị
-                    {                        
-                        indexOne = this.IndexOf(valueOne); // vị trí của thuộc tính trong ds các thuộc tính
-                        if (indexOne == -1)
-                            return string.Empty;
-
-                        if (valueTwo.Contains("'"))
-                        {
-
-                            int count = valueTwo.Split(new char[] { '\'' }).Length - 1;
-
-
-                            if (valueTwo.Substring(0, 1) != "'")
-                            {
-                                MessageError = "Unclosed quotation mark before the character string " + valueTwo;
-                                return string.Empty;
-                            }
-
-                            if (valueTwo.Substring(valueTwo.Length - 1, 1) != "'")
-                            {
-                                MessageError = "Unclosed quotation mark after the character string " + valueTwo;
-                                return string.Empty;
-                            }
-
-
-                            if (count != 2 )
-                            {
-                                MessageError = "Unclosed quotation mark at the character string " + valueTwo;
-                                return string.Empty;
-                            }
-
-
-
-
-
-                            valueTwo = valueTwo.Remove(0, 1);
-                            valueTwo = valueTwo.Remove(valueTwo.Length - 1,1);
-
-                        }
-
-
-
-                        countTripleOne = tuple.Triples[indexOne].Value.Count; // số lượng các cặp xác xuất trong thuộc tính
-                        typenameOne = Attributes[indexOne].Type.DataType;
-
-                         ProbDataType dataType = new ProbDataType();
-                         dataType.TypeName = Attributes[indexOne].Type.TypeName;
-                         dataType.DataType = Attributes[indexOne].Type.DataType;
-                         dataType.Domain = Attributes[indexOne].Type.Domain;
-                         dataType.DomainString = Attributes[indexOne].Type.DomainString;
-
-                         if (!dataType.CheckDataTypeOfVariables(valueTwo))
-                         {
-                             MessageError = String.Format("Conversion failed when converting the varchar value {0} to data type {1}.", valueTwo, typenameOne);                
-                             return string.Empty;
-                         }
-
-
-                        for (int i = 0; i < countTripleOne; i++)
-                            if (this.CompareTriple(tuple.Triples[indexOne].Value[i].ToString().Trim(), valueTwo.Trim(), operaterStr, typenameOne)) // duyệt từng cặp xác xuất và so sánh
-                            {
-                                minProb += tuple.Triples[indexOne].MinProb[i];
-                                maxProb += tuple.Triples[indexOne].MaxProb[i];
-                            }
-                    }
-                    else                     // Biểu thức kết hợp giữa hai khoảng xác suất
-                    {
                         double minProbOne, minProbTwo, maxProbOne, maxProbTwo;
                         string[] StrProb;
 
@@ -772,11 +698,17 @@ namespace PRDB_Sqlite.BLL
                             case "⊕_ig": minProb = Math.Max(minProbOne, minProbTwo); maxProb = Math.Min(1, maxProbOne + maxProbTwo); break;
                             case "⊕_in": minProb = minProbOne + minProbTwo - (minProbOne * minProbTwo); maxProb = maxProbOne + maxProbTwo - (maxProbOne * maxProbTwo); break;
                             case "⊕_me": minProb = Math.Min(1, minProbOne + minProbTwo); maxProb = Math.Min(1, maxProbOne + maxProbTwo); break;
-                            default : MessageError = "Incorrect syntax near 'where'.";
-                                break;
 
+                            case "⊖_ig": minProb = Math.Max(0, minProbOne - maxProbTwo); maxProb = Math.Min(maxProbOne, 1 - minProbTwo); break;
+                            case "⊖_in": minProb = minProbOne * (1 - maxProbTwo); maxProb = maxProbOne * (1 - minProbTwo); break;
+                            case "⊖_me": minProb = minProbOne; maxProb = Math.Min(maxProbOne, 1 - minProbTwo); break;
+
+                            default:
+                                MessageError = "Incorrect syntax near 'where'.";
+                                break;
                         }
                     }
+                }
             }
             catch
             {
@@ -786,9 +718,7 @@ namespace PRDB_Sqlite.BLL
 
             maxProb = 1 > maxProb ? maxProb : 1; // check maxProb
             return (String.Format("[{0},{1}]", minProb, maxProb));
-
-        } 
-        */
+        }
 
         public int IndexOf(string S)
         {

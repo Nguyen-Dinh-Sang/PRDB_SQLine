@@ -1536,8 +1536,9 @@
             // 
             // txtQuery
             // 
+            this.txtQuery.LanguageOption = System.Windows.Forms.RichTextBoxLanguageOptions.UIFonts;
             this.txtQuery.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtQuery.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuery.Font = new System.Drawing.Font("Microsoft Sans serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery.ForeColor = System.Drawing.Color.Black;
             this.txtQuery.Location = new System.Drawing.Point(0, 0);
             this.txtQuery.Name = "txtQuery";
