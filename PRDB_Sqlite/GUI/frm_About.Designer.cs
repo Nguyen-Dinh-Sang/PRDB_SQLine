@@ -61,7 +61,7 @@
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(53, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Full Name :";
+            this.labelControl1.Text = "Full Name:";
             // 
             // labelControl2
             // 
@@ -69,7 +69,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Students ID :";
+            this.labelControl2.Text = "Students ID:";
             // 
             // groupControl1
             // 
@@ -101,7 +101,7 @@
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(95, 13);
             this.labelControl7.TabIndex = 6;
-            this.labelControl7.Text = "coutsgu@gmail.com";
+            this.labelControl7.Text = "0345225651";
             // 
             // labelControl6
             // 
@@ -109,7 +109,7 @@
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(60, 13);
             this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "3109410138";
+            this.labelControl6.Text = "3117410210";
             // 
             // labelControl5
             // 
@@ -117,7 +117,7 @@
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(75, 13);
             this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Tran Tan Phuoc";
+            this.labelControl5.Text = "Nguyen Dinh Sang";
             // 
             // labelControl4
             // 
@@ -125,7 +125,7 @@
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(55, 13);
             this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "Instructor :";
+            this.labelControl4.Text = "Instructor:";
             // 
             // labelControl3
             // 
@@ -133,7 +133,7 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(31, 13);
             this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Email :";
+            this.labelControl3.Text = "Phone:";
             // 
             // groupControl2
             // 
@@ -165,7 +165,7 @@
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(100, 13);
             this.labelControl10.TabIndex = 6;
-            this.labelControl10.Text = "saly1012@gmail.com";
+            this.labelControl10.Text = "SDT Hải";
             // 
             // labelControl11
             // 
@@ -173,7 +173,7 @@
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(60, 13);
             this.labelControl11.TabIndex = 5;
-            this.labelControl11.Text = "3109410100";
+            this.labelControl11.Text = "3117410063";
             // 
             // labelControl12
             // 
@@ -181,7 +181,7 @@
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(75, 13);
             this.labelControl12.TabIndex = 4;
-            this.labelControl12.Text = "Thach Thi Sa Ly";
+            this.labelControl12.Text = "Tran Viet Thanh Hai";
             // 
             // labelControl13
             // 
@@ -189,7 +189,7 @@
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(55, 13);
             this.labelControl13.TabIndex = 3;
-            this.labelControl13.Text = "Instructor :";
+            this.labelControl13.Text = "Instructor:";
             // 
             // labelControl14
             // 
@@ -197,7 +197,7 @@
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(31, 13);
             this.labelControl14.TabIndex = 2;
-            this.labelControl14.Text = "Email :";
+            this.labelControl14.Text = "Phone:";
             // 
             // labelControl15
             // 
@@ -205,7 +205,7 @@
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(53, 13);
             this.labelControl15.TabIndex = 0;
-            this.labelControl15.Text = "Full Name :";
+            this.labelControl15.Text = "Full Name:";
             // 
             // labelControl16
             // 
@@ -213,7 +213,7 @@
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(64, 13);
             this.labelControl16.TabIndex = 1;
-            this.labelControl16.Text = "Students ID :";
+            this.labelControl16.Text = "Students ID:";
             // 
             // pictureBox1
             // 

@@ -245,7 +245,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2007 Blue";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Valentine";
             // 
             // ribbonControl1
             // 

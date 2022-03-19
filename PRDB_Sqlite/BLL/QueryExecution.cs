@@ -525,7 +525,6 @@ namespace PRDB_Sqlite.BLL
        }
        private List<ProbRelation> GetAllRelation(string valueString)
        {
-
            int posOne;
            int posTwo;
            string relationsString = string.Empty;
@@ -533,7 +532,6 @@ namespace PRDB_Sqlite.BLL
            string[] seperator = {"," };
            string[] relations;
            List<ProbRelation> probRelations = new List<ProbRelation>();
-
 
            //////////////////////// Get Relations ///////////////////////
            posOne = valueString.IndexOf("from") + 4;
@@ -546,15 +544,12 @@ namespace PRDB_Sqlite.BLL
            relationsString = valueString.Substring(posOne, posTwo - posOne + 1);   // Get Relation in the Query Text     
 
 
-
-        
            if (relationsString.Trim().Length <= 0)
            {
                MessageError = "No relation exists in the query !";       
               return null;
            }
 
-           
            if (relationsString.Contains(","))
            {
                relations = relationsString.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
@@ -607,7 +602,6 @@ namespace PRDB_Sqlite.BLL
                {
                    relations = new string[1];
                    relations[0] = relationsString;
-              
                }
 
            
@@ -754,10 +748,6 @@ namespace PRDB_Sqlite.BLL
                        }      
 
                    }
-
-
-
-
                }
                i = j;
            }
@@ -769,7 +759,6 @@ namespace PRDB_Sqlite.BLL
        {
            try
            {  
-           
                string S = this.queryString;
                //Kiểm tra câu truy vấn có hợp lệ
                if (!this.CheckStringQuery(S))
