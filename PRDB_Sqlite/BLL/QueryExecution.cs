@@ -8,7 +8,6 @@ namespace PRDB_Sqlite.BLL
 {
    public class QueryExecution
    {
-       public string queryString { get; set; }
        public List<ProbRelation> selectedRelations { get; set; }
        public ProbRelation relationResult { get; set; }
        public List<ProbAttribute> selectedAttributes;
@@ -19,19 +18,19 @@ namespace PRDB_Sqlite.BLL
        public string MessageError { get; set; }
        public ProbRelation DescartesAndNaturalJoin { get; set; }
 
-       public QueryExecution(string queryString, ProbDatabase probDatabase)
+       public QueryExecution(ProbDatabase probDatabase)
        {
            this.selectedRelations = new List<ProbRelation>();
            this.selectedAttributes = new List<ProbAttribute>();
            this.relationResult = new ProbRelation();
            this.selectedAttributes = new List<ProbAttribute>();
            this.probDatabase = probDatabase;
-           this.queryString = StandardizeQuery(queryString);
            this.flagNaturalJoin = false;
        }
 
       private static string StandardizeQuery(string queryString)
        {
+            Console.WriteLine("StandardizeQuery");
            try
            {
                string result = "";
@@ -61,6 +60,7 @@ namespace PRDB_Sqlite.BLL
 
        private ProbRelation Descartes()
        {
+            Console.WriteLine("Descartes");
             ProbRelation relation = new ProbRelation();
           
 
@@ -99,6 +99,7 @@ namespace PRDB_Sqlite.BLL
        }
        private static ProbTriple JoinTwoTriple(ProbTriple tripleOne, ProbTriple tripleTwo, ProbAttribute attribute, string OperationNaturalJoin)
        {
+            Console.WriteLine("JoinTwoTriple");
            ProbTriple triple = new ProbTriple();
 
             for (int i = 0; i < tripleOne.Value2.Count; i++)
@@ -153,6 +154,7 @@ namespace PRDB_Sqlite.BLL
 
         private ProbRelation NaturalJoin()
        {
+            Console.WriteLine("NaturalJoin");
            ProbRelation relation = Descartes();
            List<int> indexsRemove = new List<int>();
           
@@ -211,7 +213,7 @@ namespace PRDB_Sqlite.BLL
        
        private bool CheckStringQuery(string stringQuery)
        {
-
+            Console.WriteLine("CheckStringQuery");
            //////////////////////// Check Syntax ////////////////////////
            int indexSelect = stringQuery.IndexOf("select");
            int indexFrom = stringQuery.IndexOf("from");
@@ -342,7 +344,7 @@ namespace PRDB_Sqlite.BLL
        }
        private static bool CheckStringAttribute(string stringAttribute)
        {
-           
+            Console.WriteLine("CheckStringAttribute");
            string subString = stringAttribute;
 
            if (subString.Trim().Length <= 0)
@@ -364,6 +366,7 @@ namespace PRDB_Sqlite.BLL
        }
        private List<ProbAttribute> GetAttribute(string valueString)
        {
+            Console.WriteLine("GetAttribute");
            List<ProbAttribute> listProbAttribute = new List<ProbAttribute>();
            //////////////////////// Get Attributes //////////////////////
            int posOne, posTwo;
@@ -525,6 +528,7 @@ namespace PRDB_Sqlite.BLL
        }
        private List<ProbRelation> GetAllRelation(string valueString)
        {
+            Console.WriteLine("GetAllRelation");
            int posOne;
            int posTwo;
            string relationsString = string.Empty;
@@ -713,7 +717,7 @@ namespace PRDB_Sqlite.BLL
        }
        private static string GetCondition(string valueString)
        {
-
+            Console.WriteLine("GetCondition");
            string conditionString = string.Empty;
            int posOne;
 
@@ -755,11 +759,12 @@ namespace PRDB_Sqlite.BLL
 
            return true;
        }
-       private bool QueryAnalyze()
+       private bool QueryAnalyze(String queryString)
        {
+            Console.WriteLine("QueryAnalyze");
            try
            {  
-               string S = this.queryString;
+               string S = queryString;
                //Kiểm tra câu truy vấn có hợp lệ
                if (!this.CheckStringQuery(S))
                {             
@@ -796,6 +801,7 @@ namespace PRDB_Sqlite.BLL
        
        private static ProbRelation getRelationBySelectAttribute( ProbRelation probRelation, List<ProbAttribute> attributes)
        {
+            Console.WriteLine("getRelationBySelectAttribute");
            ProbRelation relation = new ProbRelation();
            relation.RelationName = probRelation.RelationName;            
 
@@ -830,75 +836,488 @@ namespace PRDB_Sqlite.BLL
            relation.Scheme.Attributes = attributes;
       
          return relation;      
-       }        
+       }   
+        
 
-       internal bool ExecuteQuery()
-       {
-           try
-           {
-               if (!QueryAnalyze()) return false;
+        bool unionIntersectExcept(String queryString)
+        {
+            Console.WriteLine("unionIntersectExcept: " + queryString);
+            String query = queryString;
+            String subQuery1;
+            String subQuery2;
 
+            if (query.Contains("union"))
+            {
+                if (query.Contains("union all"))
+                {
+                    subQuery1 = subBefore(queryString, "union all");
+                    subQuery2 = subAfter(queryString, "union all");
 
-               if (this.selectedRelations.Count == 2)
-               {
-                   if (flagNaturalJoin != true)
-                       this.selectedRelations[0] = Descartes();
-                   else
-                       this.selectedRelations[0] = NaturalJoin();
-               }
-               else
-               {
-                       foreach (ProbAttribute attr in this.selectedRelations[0].Scheme.Attributes)
-                       {
-                           if (!attr.AttributeName.Contains("."))
-                               attr.AttributeName = String.Format("{0}.{1}", this.selectedRelations[0].RelationName, attr.AttributeName);
-                       }
-              
-               }
-                                            
-                           
-               if (!this.queryString.Contains("where"))
-               {
-                   this.relationResult = getRelationBySelectAttribute(this.selectedRelations[0], this.selectedAttributes);
-                   return true;
-               }
-               else
-               {
-                   // Đang làm dỡ phần này
-                   SelectCondition Condition = new SelectCondition(this.selectedRelations[0], this.conditionString);
-                   if (!Condition.CheckConditionString())
-                   {
-                       this.MessageError = Condition.MessageError;
-                       return false;
-                   }
+                    ProbRelation relationResult = new ProbRelation();
 
-                   foreach (ProbTuple tuple in this.selectedRelations[0].tuples)
+                    if (ExecuteQuery(subQuery1))
                     {
-                        if (Condition.Satisfied(tuple))
-                            this.relationResult.tuples.Add(tuple);
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+                            this.relationResult = relationResult;
+                            return true;
+                        } else
+                        {
+                            return false;
+                        }
+                    } else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("union ⊗_in"))
+                {
+                    subQuery1 = subBefore(queryString, "union ⊗_in");
+                    subQuery2 = subAfter(queryString, "union ⊗_in");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+
+                            foreach (ProbTuple probTuple in relationResult.tuples)
+                            {
+                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
+                                {
+                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
+                                    double min = old.Triples[0].MinProb[0] * probTuple.Triples[0].MinProb[0];
+                                    double max = old.Triples[0].MaxProb[0] * probTuple.Triples[0].MaxProb[0];
+
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
+                                }
+                                else
+                                {
+                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
+                                }
+                            }
+
+                            ProbRelation relationEnd = new ProbRelation();
+
+                            foreach(KeyValuePair<string, ProbTuple> keyValue in union)
+                            {
+                                relationEnd.tuples.Add(keyValue.Value);
+                            }
+
+                            this.relationResult = relationEnd;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("union ⊗_ig"))
+                {
+                    subQuery1 = subBefore(queryString, "union ⊗_ig");
+                    subQuery2 = subAfter(queryString, "union ⊗_ig");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+
+                            foreach (ProbTuple probTuple in relationResult.tuples)
+                            {
+                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
+                                {
+                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
+                                    double min = Math.Max(0, (old.Triples[0].MinProb[0] + probTuple.Triples[0].MinProb[0] - 1));
+                                    double max = Math.Min(old.Triples[0].MaxProb[0], probTuple.Triples[0].MaxProb[0]);
+
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
+                                }
+                                else
+                                {
+                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
+                                }
+                            }
+
+                            ProbRelation relationEnd = new ProbRelation();
+
+                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
+                            {
+                                relationEnd.tuples.Add(keyValue.Value);
+                            }
+
+                            this.relationResult = relationEnd;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("union ⊗_me"))
+                {
+                    subQuery1 = subBefore(queryString, "union ⊗_me");
+                    subQuery2 = subAfter(queryString, "union ⊗_me");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+
+                            foreach (ProbTuple probTuple in relationResult.tuples)
+                            {
+                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
+                                {
+                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
+                                    double min = 0;
+                                    double max = 0;
+
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
+                                }
+                                else
+                                {
+                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
+                                }
+                            }
+
+                            ProbRelation relationEnd = new ProbRelation();
+
+                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
+                            {
+                                relationEnd.tuples.Add(keyValue.Value);
+                            }
+
+                            this.relationResult = relationEnd;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("union ⊕_ig"))
+                {
+                    subQuery1 = subBefore(queryString, "union ⊕_ig");
+                    subQuery2 = subAfter(queryString, "union ⊕_ig");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+
+                            foreach (ProbTuple probTuple in relationResult.tuples)
+                            {
+                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
+                                {
+                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
+                                    double min = Math.Max(old.Triples[0].MinProb[0], probTuple.Triples[0].MinProb[0]);
+                                    double max = Math.Min(1, old.Triples[0].MaxProb[0] + probTuple.Triples[0].MaxProb[0]);
+
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
+                                }
+                                else
+                                {
+                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
+                                }
+                            }
+
+                            ProbRelation relationEnd = new ProbRelation();
+
+                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
+                            {
+                                relationEnd.tuples.Add(keyValue.Value);
+                            }
+
+                            this.relationResult = relationEnd;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("union ⊕_in"))
+                {
+                    subQuery1 = subBefore(queryString, "union ⊕_in");
+                    subQuery2 = subAfter(queryString, "union ⊕_in");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+
+                            foreach (ProbTuple probTuple in relationResult.tuples)
+                            {
+                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
+                                {
+                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
+                                    double min = (old.Triples[0].MinProb[0] + probTuple.Triples[0].MinProb[0]) - (old.Triples[0].MinProb[0] * probTuple.Triples[0].MinProb[0]);
+                                    double max = (old.Triples[0].MaxProb[0] + probTuple.Triples[0].MaxProb[0]) - (old.Triples[0].MaxProb[0] * probTuple.Triples[0].MaxProb[0]);
+
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
+                                }
+                                else
+                                {
+                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
+                                }
+                            }
+
+                            ProbRelation relationEnd = new ProbRelation();
+
+                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
+                            {
+                                relationEnd.tuples.Add(keyValue.Value);
+                            }
+
+                            this.relationResult = relationEnd;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("union ⊕_me"))
+                {
+                    subQuery1 = subBefore(queryString, "union ⊕_me");
+                    subQuery2 = subAfter(queryString, "union ⊕_me");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+
+                            foreach (ProbTuple probTuple in relationResult.tuples)
+                            {
+                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
+                                {
+                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
+                                    double min = Math.Min(1, old.Triples[0].MinProb[0] + probTuple.Triples[0].MinProb[0]);
+                                    double max = Math.Min(1, old.Triples[0].MaxProb[0] + probTuple.Triples[0].MaxProb[0]);
+
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
+                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
+                                }
+                                else
+                                {
+                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
+                                }
+                            }
+
+                            ProbRelation relationEnd = new ProbRelation();
+
+                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
+                            {
+                                relationEnd.tuples.Add(keyValue.Value);
+                            }
+
+                            this.relationResult = relationEnd;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        String subBefore(String queryString, String code)
+        {
+            int index = queryString.IndexOf(code);
+            return queryString.Substring(0, index).Trim();
+        }
+
+        String subAfter(String queryString, String code)
+        {
+            int index = queryString.IndexOf(code) + code.Length;
+            return queryString.Substring(index).Trim();
+        }
+
+        internal bool ExecuteQuery(String queryText)
+       {
+            String queryString = StandardizeQuery(queryText);
+            Console.WriteLine("ExecuteQuery: " + queryString);
+            String query = queryString;
+            if (query.Contains("union") || query.Contains("intersect") || query.Contains("except"))
+            {
+                return unionIntersectExcept(queryString);
+            } else
+            {
+                try
+                {
+                    if (!QueryAnalyze(queryString)) return false;
+
+                    Console.WriteLine("Qua");
+
+                    if (this.selectedRelations.Count == 2)
+                    {
+                        if (flagNaturalJoin != true)
+                            this.selectedRelations[0] = Descartes();
+                        else
+                            this.selectedRelations[0] = NaturalJoin();
+                    }
+                    else
+                    {
+                        foreach (ProbAttribute attr in this.selectedRelations[0].Scheme.Attributes)
+                        {
+                            if (!attr.AttributeName.Contains("."))
+                                attr.AttributeName = String.Format("{0}.{1}", this.selectedRelations[0].RelationName, attr.AttributeName);
+                        }
+
                     }
 
-                   if (Condition.MessageError != string.Empty)
-                   {
-                       this.MessageError = Condition.MessageError;
-                       return false;
-                   }
 
-                   if (Condition.conditionString == string.Empty)
-                   {
-                       this.MessageError = Condition.MessageError;
-                       return false; 
-                   }
+                    if (!queryString.Contains("where"))
+                    {
+                        this.relationResult = getRelationBySelectAttribute(this.selectedRelations[0], this.selectedAttributes);
+                        return true;
+                    }
+                    else
+                    {
+                        // Đang làm dỡ phần này
+                        SelectCondition Condition = new SelectCondition(this.selectedRelations[0], this.conditionString);
+                        if (!Condition.CheckConditionString())
+                        {
+                            this.MessageError = Condition.MessageError;
+                            return false;
+                        }
 
-                   this.relationResult.Scheme = this.selectedRelations[0].Scheme;
-                   this.relationResult = getRelationBySelectAttribute(this.relationResult, this.selectedAttributes);
-               }
-           }
-           catch 
-           {
-               return false;
-           }
-           return true;
+                        foreach (ProbTuple tuple in this.selectedRelations[0].tuples)
+                        {
+                            if (Condition.Satisfied(tuple))
+                                this.relationResult.tuples.Add(tuple);
+                        }
+
+                        if (Condition.MessageError != string.Empty)
+                        {
+                            this.MessageError = Condition.MessageError;
+                            return false;
+                        }
+
+                        if (Condition.conditionString == string.Empty)
+                        {
+                            this.MessageError = Condition.MessageError;
+                            return false;
+                        }
+
+                        this.relationResult.Scheme = this.selectedRelations[0].Scheme;
+                        this.relationResult = getRelationBySelectAttribute(this.relationResult, this.selectedAttributes);
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+                return true;
+            }
        }
    }
 }

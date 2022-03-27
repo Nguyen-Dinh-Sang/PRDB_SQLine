@@ -1,0 +1,96 @@
+1: Giới thiệu cơ bản: chức năng,...
+2: Tạo database, tạo bảng, thêm dữ liệu.
+3: Giới thiệu về database tạo sẵn.
+
+4: Chiếu
+	- Lấy *
+	select * from patient
+
+	- Lấy thuộc tính
+	select name, age from patient
+
+5: Chọn
+	- Lấy AB bình thường
+	select * from patient where (patient.bood = 'AB' )[0.4 , 1]
+	
+	- Lấy AB có xác suất
+	select * from patient where (patient.bood = 'AB' )[0.4 , 0.8]
+
+	- Lấy nhiều điều kiện
+	select * from patient where (patient.bood = 'AB' )[0.4 , 1]  or (patient.age = '23')[1, 1]
+	select name from patient where (patient.bood = 'AB' )[0.4 , 0.8]  or (patient.age = '23')[1, 1]
+	select name, age, address from patient where (patient.bood = 'AB' )[0.4 , 1]  and (patient.age = '23')[1, 1]
+	select * from employee1 where (name = 'Nguyễn Đình Sang')[1,1]
+	
+	- Lấy có chiến lược: chưa xong
+	select bood, age from patient where (patient.bood = 'AB'  ⊕_in patient.age = '23')[1, 1]
+chiến lược:
+	2 cái trùng nhau thì hợp lại với nhau.
+	2 trung 2 cái khác thì cái trung hợp.
+	
+
+6: Tích
+	- Full
+	select * from employee1, employee2
+	- Có where
+	select p.name, p.age, d.name from patient p, doctor d where (p.age > 23)[0.2 , 1]
+	- Có chiến lược: chưa xong
+	select * from patient p, doctor d where (p.age > 20 ⊗_in d.name = 'Trần Minh Nhật')[0.2 , 1]
+
+6: Kết
+	- kết qua where
+	select * from patient p, consultation c where (p.id  EQUAL_in c.id) [1,1]
+	select * from patient p, consultation c where (p.id  EQUAL_in c.id) [1,1] and (p.bood = 'AB')[0.5, 0.7]
+	- Join
+	select * from employee1 natural join in employee2
+	- Join thêm where kết hợp xác suất
+	select * from employee1 natural join in employee2 where (employee1.id  > '1')[1, 1]
+*** ở đây demo phần tính xác suất theo lý thuyết.
+sẽ chỉ có chiến lược tuyển với hội
+
+7: Hợp
+	- Lấy full
+	select name
+	from patient
+	union all 
+	select name
+	from doctor
+	- Dùng thêm các điều kiện lọc
+	select name
+	from patient
+	union all 
+	select name
+	from doctor
+	- Theo chiến lược hội độc lập
+	select name
+	from patient
+	union ⊗_in 
+	select name
+	from doctor
+
+union cứ trùng gộp rồi gộp xác suất.
+union chỉ có tuyển với hội.
+union  ⊗_in  ⊗_ig  ⊗_me  ⊕_ig  ⊕_in  ⊕_me 
+
+5 giao: (lấy phần chung giữa 2 câu truy vấn)
+	SELECT Column_Name1, Column_Name2 ......., Column_NameN FROM Table1
+	INTERSECT
+	SELECT Column_Name1, Column_Name2 ......., Column_NameN FROM Table2
+ví dụ bảng 1 (Sang Hải Phát)
+	bảng 2(Phát Hiếu)
+bảng 1
+intersect
+bảng 2 
+= Phát (1 Dòng)
+(Lấy phần chung)
+
+6 trừ:EXCEPT
+ví dụ bảng 1 (Sang Hải Phát)
+	bảng 2(Phát Hiếu)
+
+bảng 1 except bảng 2 = Sang Hải
+(Lấy những phần tử bảng 1 không nằm trong bảng 2) 
+
+x là hội
++ tuyển
+- trừ

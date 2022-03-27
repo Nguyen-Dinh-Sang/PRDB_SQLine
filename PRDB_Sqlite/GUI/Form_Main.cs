@@ -2870,15 +2870,17 @@ namespace PRDB_Sqlite.GUI
 
         private void ExecuteQuery()
         {
+            Console.WriteLine("ExecuteQuery: " + txtQuery.Text);
+
             try
             {
                 GridViewResult.Rows.Clear();
                 GridViewResult.Columns.Clear();
 
-                QueryExecution query = new QueryExecution(txtQuery.Text, this.probDatabase);
+                QueryExecution query = new QueryExecution(this.probDatabase);
                 txtMessage.Text = "";
 
-                if (query.ExecuteQuery())
+                if (query.ExecuteQuery(txtQuery.Text))
                 {
                     txtMessage.Text = string.Empty;
 
@@ -3007,10 +3009,59 @@ namespace PRDB_Sqlite.GUI
                     txtQuery.SelectionColor = Color.Blue;
                 }
 
+                if (tmp.Contains("union") || tmp.Contains("intersect") || tmp.Contains("except"))
+                {
+                    int indexX;
+                    if (tmp.IndexOf("union ") != -1)
+                    {
+                        indexX = tmp.IndexOf("union ");
+                        txtQuery.Select(indexX, 5);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
 
+                    if (tmp.IndexOf("union all ") != -1)
+                    {
+                        indexX = tmp.IndexOf("union all ");
+                        txtQuery.Select(indexX, 9);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
 
+                    if (tmp.IndexOf("intersect ") != -1)
+                    {
+                        indexX = tmp.IndexOf("intersect ");
+                        txtQuery.Select(indexX, 9);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
 
+                    if (tmp.IndexOf("except ") != -1)
+                    {
+                        indexX = tmp.IndexOf("except ");
+                        txtQuery.Select(indexX, 7);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
 
+                    if (tmp.LastIndexOf("select ") != -1)
+                    {
+                        indexX = tmp.LastIndexOf("select ");
+                        txtQuery.Select(indexX, 7);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
+
+                    if (tmp.LastIndexOf("from ") != -1)
+                    {
+                        indexX = tmp.LastIndexOf("from ");
+                        txtQuery.Select(indexX, 5);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
+
+                    if (tmp.LastIndexOf("where ") != -1)
+                    {
+                        indexX = tmp.LastIndexOf("where ");
+                        txtQuery.Select(indexX, 6);
+                        txtQuery.SelectionColor = Color.Blue;
+                    }
+                }
+                
                 if (indexSelect != -1)
                 {
                     if (indexSelect != 0)

@@ -245,7 +245,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Valentine";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "DevExpress Style";
             // 
             // ribbonControl1
             // 
