@@ -165,7 +165,7 @@
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(100, 13);
             this.labelControl10.TabIndex = 6;
-            this.labelControl10.Text = "SDT Hải";
+            this.labelControl10.Text = "0333771800";
             // 
             // labelControl11
             // 

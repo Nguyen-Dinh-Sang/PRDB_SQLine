@@ -1255,8 +1255,6 @@ namespace PRDB_Sqlite.BLL
                 {
                     if (!QueryAnalyze(queryString)) return false;
 
-                    Console.WriteLine("Qua");
-
                     if (this.selectedRelations.Count == 2)
                     {
                         if (flagNaturalJoin != true)
@@ -1278,6 +1276,13 @@ namespace PRDB_Sqlite.BLL
                     if (!queryString.Contains("where"))
                     {
                         this.relationResult = getRelationBySelectAttribute(this.selectedRelations[0], this.selectedAttributes);
+
+                        Console.WriteLine("Compare and Return");
+
+                        CompareProbTuple compareProbTuple = new CompareProbTuple(this.relationResult);
+
+                        relationResult = compareProbTuple.equal();
+
                         return true;
                     }
                     else
