@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CompareProbTuple.cs" />
+    <Compile Include="BLL\Except.cs" />
     <Compile Include="BLL\Intersect.cs" />
     <Compile Include="BLL\ProbAttribute.cs">
       <SubType>Code</SubType>

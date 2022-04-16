@@ -1025,11 +1025,6 @@ namespace PRDB_Sqlite.BLL
 
                         if (ExecuteQuery(subQuery2))
                         {
-                            foreach (ProbTuple tuple in this.relationResult.tuples)
-                            {
-                                relationResult.tuples.Add(tuple);
-                            }
-
                             Intersect intersect = new Intersect(relationResult, this.relationResult);
                             this.relationResult = intersect.equal("⊗_ig");
 
@@ -1059,11 +1054,6 @@ namespace PRDB_Sqlite.BLL
 
                         if (ExecuteQuery(subQuery2))
                         {
-                            foreach (ProbTuple tuple in this.relationResult.tuples)
-                            {
-                                relationResult.tuples.Add(tuple);
-                            }
-
                             Intersect intersect = new Intersect(relationResult, this.relationResult);
                             this.relationResult = intersect.equal("⊗_me");
 
@@ -1078,6 +1068,35 @@ namespace PRDB_Sqlite.BLL
                     {
                         return false;
                     }
+                }
+            }
+
+            if (query.Contains("except"))
+            {
+                subQuery1 = subBefore(queryString, "except");
+                subQuery2 = subAfter(queryString, "except");
+
+                ProbRelation relationResult = new ProbRelation();
+
+                if (ExecuteQuery(subQuery1))
+                {
+                    relationResult = this.relationResult;
+
+                    if (ExecuteQuery(subQuery2))
+                    {
+                        Except intersect = new Except(relationResult, this.relationResult);
+                        this.relationResult = intersect.equal();
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
                 }
             }
 
