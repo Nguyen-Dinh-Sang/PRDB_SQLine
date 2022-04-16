@@ -19,7 +19,7 @@ namespace PRDB_Sqlite.BLL
             this.relationResult = new ProbRelation();
         }
 
-        public ProbRelation equal()
+        public ProbRelation equal(String rule)
         {
             //so sánh 2 dòng với nhau, mỗi dòng là 1 ProbTuple
             //so sánh 2 ô với nhau, mỗi ô là 1 ProbTriple
@@ -43,7 +43,7 @@ namespace PRDB_Sqlite.BLL
                         {
                             flags[j] = 1;
                             ProbTuple old = mapResult[i];
-                            mapResult[i] = mergeRow(old, row2);
+                            mapResult[i] = mergeRow(old, row2, rule);
                         }
                     }
                 }
@@ -57,19 +57,19 @@ namespace PRDB_Sqlite.BLL
             return relationResult;
         }
 
-        private ProbTuple mergeRow(ProbTuple row1, ProbTuple row2)
+        private ProbTuple mergeRow(ProbTuple row1, ProbTuple row2, String rule)
         {
             ProbTuple result = row1;
             int sizeOfRow = row1.Triples.Count;
             for (int i = 0; i < sizeOfRow; i++)
             {
-                result.Triples[i] = mergeCell(row1.Triples[i], row2.Triples[i]);
+                result.Triples[i] = mergeCell(row1.Triples[i], row2.Triples[i], rule);
             }
 
             return result;
         }
 
-        private ProbTriple mergeCell(ProbTriple cell1, ProbTriple cell2)
+        private ProbTriple mergeCell(ProbTriple cell1, ProbTriple cell2, String rule)
         {
             ProbTriple result = cell1;
             int sizeOfCell = cell1.Value2.Count;
@@ -86,9 +86,29 @@ namespace PRDB_Sqlite.BLL
                     if (flagsOfSet2[j] == 0 && compareTriple(set1, set2))
                     {
                         flagsOfSet2[j] = 1;
-                        result.MaxProb[i] = (cell1.MaxProb[i] + cell2.MaxProb[j]) - (cell1.MaxProb[i] * cell2.MaxProb[j]);
+                        switch (rule)
+                        {
+                            case "⊕_in":
+                                {
+                                    result.MaxProb[i] = (cell1.MaxProb[i] + cell2.MaxProb[j]) - (cell1.MaxProb[i] * cell2.MaxProb[j]);
 
-                        result.MinProb[i] = (cell1.MinProb[i] + cell1.MinProb[j]) - (cell1.MinProb[i] * cell1.MinProb[j]);
+                                    result.MinProb[i] = (cell1.MinProb[i] + cell1.MinProb[j]) - (cell1.MinProb[i] * cell1.MinProb[j]);
+                                    break;
+                                }
+                            case "⊕_ig":
+                                {
+                                    result.MinProb[i] = Math.Max(cell1.MinProb[i], cell1.MinProb[j]);
+                                    result.MaxProb[i] = Math.Min(1, (cell1.MaxProb[i] + cell2.MaxProb[j]));
+                                    break;
+                                }
+
+                            case "⊕_me":
+                                {
+                                    result.MinProb[i] = Math.Min(1, (cell1.MinProb[i] + cell1.MinProb[j]));
+                                    result.MaxProb[i] = Math.Min(1, (cell1.MaxProb[i] + cell2.MaxProb[j]));
+                                    break;
+                                }
+                        }
                     }
                 }
             }

@@ -877,180 +877,6 @@ namespace PRDB_Sqlite.BLL
                     }
                 }
 
-                if (query.Contains("union ⊗_in"))
-                {
-                    subQuery1 = subBefore(queryString, "union ⊗_in");
-                    subQuery2 = subAfter(queryString, "union ⊗_in");
-
-                    ProbRelation relationResult = new ProbRelation();
-
-                    if (ExecuteQuery(subQuery1))
-                    {
-                        relationResult = this.relationResult;
-
-                        if (ExecuteQuery(subQuery2))
-                        {
-                            foreach (ProbTuple tuple in this.relationResult.tuples)
-                            {
-                                relationResult.tuples.Add(tuple);
-                            }
-
-                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
-
-                            foreach (ProbTuple probTuple in relationResult.tuples)
-                            {
-                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
-                                {
-                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
-                                    double min = old.Triples[0].MinProb[0] * probTuple.Triples[0].MinProb[0];
-                                    double max = old.Triples[0].MaxProb[0] * probTuple.Triples[0].MaxProb[0];
-
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
-                                }
-                                else
-                                {
-                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
-                                }
-                            }
-
-                            ProbRelation relationEnd = new ProbRelation();
-
-                            foreach(KeyValuePair<string, ProbTuple> keyValue in union)
-                            {
-                                relationEnd.tuples.Add(keyValue.Value);
-                            }
-
-                            this.relationResult = relationEnd;
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
-                if (query.Contains("union ⊗_ig"))
-                {
-                    subQuery1 = subBefore(queryString, "union ⊗_ig");
-                    subQuery2 = subAfter(queryString, "union ⊗_ig");
-
-                    ProbRelation relationResult = new ProbRelation();
-
-                    if (ExecuteQuery(subQuery1))
-                    {
-                        relationResult = this.relationResult;
-
-                        if (ExecuteQuery(subQuery2))
-                        {
-                            foreach (ProbTuple tuple in this.relationResult.tuples)
-                            {
-                                relationResult.tuples.Add(tuple);
-                            }
-
-                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
-
-                            foreach (ProbTuple probTuple in relationResult.tuples)
-                            {
-                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
-                                {
-                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
-                                    double min = Math.Max(0, (old.Triples[0].MinProb[0] + probTuple.Triples[0].MinProb[0] - 1));
-                                    double max = Math.Min(old.Triples[0].MaxProb[0], probTuple.Triples[0].MaxProb[0]);
-
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
-                                }
-                                else
-                                {
-                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
-                                }
-                            }
-
-                            ProbRelation relationEnd = new ProbRelation();
-
-                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
-                            {
-                                relationEnd.tuples.Add(keyValue.Value);
-                            }
-
-                            this.relationResult = relationEnd;
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
-                if (query.Contains("union ⊗_me"))
-                {
-                    subQuery1 = subBefore(queryString, "union ⊗_me");
-                    subQuery2 = subAfter(queryString, "union ⊗_me");
-
-                    ProbRelation relationResult = new ProbRelation();
-
-                    if (ExecuteQuery(subQuery1))
-                    {
-                        relationResult = this.relationResult;
-
-                        if (ExecuteQuery(subQuery2))
-                        {
-                            foreach (ProbTuple tuple in this.relationResult.tuples)
-                            {
-                                relationResult.tuples.Add(tuple);
-                            }
-
-                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
-
-                            foreach (ProbTuple probTuple in relationResult.tuples)
-                            {
-                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
-                                {
-                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
-                                    double min = 0;
-                                    double max = 0;
-
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
-                                }
-                                else
-                                {
-                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
-                                }
-                            }
-
-                            ProbRelation relationEnd = new ProbRelation();
-
-                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
-                            {
-                                relationEnd.tuples.Add(keyValue.Value);
-                            }
-
-                            this.relationResult = relationEnd;
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
                 if (query.Contains("union ⊕_ig"))
                 {
                     subQuery1 = subBefore(queryString, "union ⊕_ig");
@@ -1069,33 +895,9 @@ namespace PRDB_Sqlite.BLL
                                 relationResult.tuples.Add(tuple);
                             }
 
-                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+                            CompareProbTuple compareProbTuple = new CompareProbTuple(relationResult);
+                            this.relationResult = compareProbTuple.equal("⊕_ig");
 
-                            foreach (ProbTuple probTuple in relationResult.tuples)
-                            {
-                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
-                                {
-                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
-                                    double min = Math.Max(old.Triples[0].MinProb[0], probTuple.Triples[0].MinProb[0]);
-                                    double max = Math.Min(1, old.Triples[0].MaxProb[0] + probTuple.Triples[0].MaxProb[0]);
-
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
-                                }
-                                else
-                                {
-                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
-                                }
-                            }
-
-                            ProbRelation relationEnd = new ProbRelation();
-
-                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
-                            {
-                                relationEnd.tuples.Add(keyValue.Value);
-                            }
-
-                            this.relationResult = relationEnd;
                             return true;
                         }
                         else
@@ -1127,33 +929,9 @@ namespace PRDB_Sqlite.BLL
                                 relationResult.tuples.Add(tuple);
                             }
 
-                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+                            CompareProbTuple compareProbTuple = new CompareProbTuple(relationResult);
+                            this.relationResult = compareProbTuple.equal("⊕_in");
 
-                            foreach (ProbTuple probTuple in relationResult.tuples)
-                            {
-                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
-                                {
-                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
-                                    double min = (old.Triples[0].MinProb[0] + probTuple.Triples[0].MinProb[0]) - (old.Triples[0].MinProb[0] * probTuple.Triples[0].MinProb[0]);
-                                    double max = (old.Triples[0].MaxProb[0] + probTuple.Triples[0].MaxProb[0]) - (old.Triples[0].MaxProb[0] * probTuple.Triples[0].MaxProb[0]);
-
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
-                                }
-                                else
-                                {
-                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
-                                }
-                            }
-
-                            ProbRelation relationEnd = new ProbRelation();
-
-                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
-                            {
-                                relationEnd.tuples.Add(keyValue.Value);
-                            }
-
-                            this.relationResult = relationEnd;
                             return true;
                         }
                         else
@@ -1185,33 +963,9 @@ namespace PRDB_Sqlite.BLL
                                 relationResult.tuples.Add(tuple);
                             }
 
-                            Dictionary<string, ProbTuple> union = new Dictionary<string, ProbTuple>();
+                            CompareProbTuple compareProbTuple = new CompareProbTuple(relationResult);
+                            this.relationResult = compareProbTuple.equal("⊕_me");
 
-                            foreach (ProbTuple probTuple in relationResult.tuples)
-                            {
-                                if (union.ContainsKey(probTuple.Triples[0].Value2[0].GetStrValue()))
-                                {
-                                    ProbTuple old = union[probTuple.Triples[0].Value2[0].GetStrValue()];
-                                    double min = Math.Min(1, old.Triples[0].MinProb[0] + probTuple.Triples[0].MinProb[0]);
-                                    double max = Math.Min(1, old.Triples[0].MaxProb[0] + probTuple.Triples[0].MaxProb[0]);
-
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MinProb[0] = min;
-                                    union[probTuple.Triples[0].Value2[0].GetStrValue()].Triples[0].MaxProb[0] = max;
-                                }
-                                else
-                                {
-                                    union.Add(probTuple.Triples[0].Value2[0].GetStrValue(), probTuple);
-                                }
-                            }
-
-                            ProbRelation relationEnd = new ProbRelation();
-
-                            foreach (KeyValuePair<string, ProbTuple> keyValue in union)
-                            {
-                                relationEnd.tuples.Add(keyValue.Value);
-                            }
-
-                            this.relationResult = relationEnd;
                             return true;
                         }
                         else
@@ -1281,7 +1035,7 @@ namespace PRDB_Sqlite.BLL
 
                         CompareProbTuple compareProbTuple = new CompareProbTuple(this.relationResult);
 
-                        relationResult = compareProbTuple.equal();
+                        relationResult = compareProbTuple.equal("⊕_in");
 
                         return true;
                     }

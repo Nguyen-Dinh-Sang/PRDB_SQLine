@@ -2086,7 +2086,6 @@ namespace PRDB_Sqlite.GUI
             int UpdateRow, UpdateCell;
             if (Checkbox_UUD.Checked)
             {
-
                 if (GridViewValue.Rows.Count == 0)
                 {
                     MessageBox.Show("The value is not entered!");
