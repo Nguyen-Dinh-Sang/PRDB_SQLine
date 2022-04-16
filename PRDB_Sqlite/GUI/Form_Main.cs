@@ -2267,8 +2267,8 @@ namespace PRDB_Sqlite.GUI
                     for (int i = 0; i < n; i++)
                     {
                         triple.Value2.Add(new ValueOfTriple(value[i]));
-                        triple.MinProb.Add(minprob / n);
-                        triple.MaxProb.Add(maxprob / n);
+                        triple.MinProb.Add(Math.Round((minprob / n), 2));
+                        triple.MaxProb.Add(Math.Round((maxprob / n), 2));
                     }
 
                     UpdateRow = GridViewData.CurrentRow.Index;
