@@ -14,6 +14,7 @@ namespace PRDB_Sqlite.BLL
        public ProbDatabase probDatabase { get; set; }
        public string conditionString { get; set; }
        public bool flagNaturalJoin { get; set; }      
+
        private string OperationNaturalJoin = string.Empty;
        public string MessageError { get; set; }
        public ProbRelation DescartesAndNaturalJoin { get; set; }
@@ -965,6 +966,106 @@ namespace PRDB_Sqlite.BLL
 
                             CompareProbTuple compareProbTuple = new CompareProbTuple(relationResult);
                             this.relationResult = compareProbTuple.equal("⊕_me");
+
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            if (query.Contains("intersect"))
+            {
+                if (query.Contains("intersect ⊗_in"))
+                {
+                    subQuery1 = subBefore(queryString, "intersect ⊗_in");
+                    subQuery2 = subAfter(queryString, "intersect ⊗_in");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            Intersect intersect = new Intersect(relationResult, this.relationResult);
+                            this.relationResult = intersect.equal("⊗_in");
+
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("intersect ⊗_ig"))
+                {
+                    subQuery1 = subBefore(queryString, "intersect ⊗_ig");
+                    subQuery2 = subAfter(queryString, "intersect ⊗_ig");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Intersect intersect = new Intersect(relationResult, this.relationResult);
+                            this.relationResult = intersect.equal("⊗_ig");
+
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                if (query.Contains("intersect ⊗_me"))
+                {
+                    subQuery1 = subBefore(queryString, "intersect ⊗_me");
+                    subQuery2 = subAfter(queryString, "intersect ⊗_me");
+
+                    ProbRelation relationResult = new ProbRelation();
+
+                    if (ExecuteQuery(subQuery1))
+                    {
+                        relationResult = this.relationResult;
+
+                        if (ExecuteQuery(subQuery2))
+                        {
+                            foreach (ProbTuple tuple in this.relationResult.tuples)
+                            {
+                                relationResult.tuples.Add(tuple);
+                            }
+
+                            Intersect intersect = new Intersect(relationResult, this.relationResult);
+                            this.relationResult = intersect.equal("⊗_me");
 
                             return true;
                         }
