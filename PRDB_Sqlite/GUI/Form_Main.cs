@@ -3149,17 +3149,32 @@ namespace PRDB_Sqlite.GUI
                                     txtQuery.Select(i + tmp.IndexOf("where") + 6, k - i + 1);
                                     txtQuery.SelectionColor = Color.Red;
                                 }
-
                             }
-
-
-
-
                         }
+
+                        if (tmpWhere[i] == '{')
+                        {
+
+                            for (int k = j; k < tmpWhere.Length; k++)
+                            {
+                                if (tmpWhere[k] == '}')
+                                {
+                                    j = k + 1;
+                                    txtQuery.Select(i + tmp.IndexOf("where") + 6, j - i);
+                                    txtQuery.SelectionColor = Color.Red;
+                                    break;
+                                }
+                                else
+                                    if (tmpWhere[k] != '}' && k == tmpWhere.Length - 1)
+                                {
+                                    txtQuery.Select(i + tmp.IndexOf("where") + 6, k - i + 1);
+                                    txtQuery.SelectionColor = Color.Red;
+                                }
+                            }
+                        }
+
                         i = j;
                     }
-
-
                 }
 
 

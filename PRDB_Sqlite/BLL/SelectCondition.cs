@@ -19,6 +19,7 @@ namespace PRDB_Sqlite.BLL
         public SelectCondition(ProbRelation probRelation, string conditionString)
         {
             // TODO: Complete member initialization
+
             relations = probRelation;
 
             int i = 0;
@@ -607,22 +608,24 @@ namespace PRDB_Sqlite.BLL
                     // Biểu thức so sánh giữa một thuộc tính với một giá trị
                     if (SelectCondition.isCompareOperator(operaterStr))
                     {
-                        Console.WriteLine("GetProbInterval 1");
                         indexOne = this.IndexOf(valueOne); // vị trí của thuộc tính trong ds các thuộc tính
                         if (indexOne == -1)
                             return string.Empty;
 
-                        if (valueTwo.Contains("'"))
+                        if (valueTwo.Contains('{'))
                         {
-                            int count = valueTwo.Split(new char[] { '\'' }).Length - 1;
+                            string replace = valueTwo.Replace("{", "|");
+                            replace = replace.Replace("}", "|");
 
-                            if (valueTwo.Substring(0, 1) != "'")
+                            int count = replace.Split(new char[] { '|' }).Length - 1;
+
+                            if (valueTwo.Substring(0, 1) != "{")
                             {
                                 MessageError = "Unclosed quotation mark before the character string " + valueTwo;
                                 return string.Empty;
                             }
 
-                            if (valueTwo.Substring(valueTwo.Length - 1, 1) != "'")
+                            if (valueTwo.Substring(valueTwo.Length - 1, 1) != "}")
                             {
                                 MessageError = "Unclosed quotation mark after the character string " + valueTwo;
                                 return string.Empty;
@@ -636,37 +639,97 @@ namespace PRDB_Sqlite.BLL
 
                             valueTwo = valueTwo.Remove(0, 1);
                             valueTwo = valueTwo.Remove(valueTwo.Length - 1, 1);
-                        }
 
-                        countTripleOne = tuple.Triples[indexOne].Value2.Count; // số lượng các cặp xác xuất trong thuộc tính
-                        typenameOne = Attributes[indexOne].Type.DataType;
+                            countTripleOne = tuple.Triples[indexOne].Value2.Count; // số lượng các cặp xác xuất trong thuộc tính
+                            typenameOne = Attributes[indexOne].Type.DataType;
 
-                        ProbDataType dataType = new ProbDataType();
-                        dataType.TypeName = Attributes[indexOne].Type.TypeName;
-                        dataType.DataType = Attributes[indexOne].Type.DataType;
-                        dataType.Domain = Attributes[indexOne].Type.Domain;
-                        dataType.DomainString = Attributes[indexOne].Type.DomainString;
+                            ProbDataType dataType = new ProbDataType();
+                            dataType.TypeName = Attributes[indexOne].Type.TypeName;
+                            dataType.DataType = Attributes[indexOne].Type.DataType;
+                            dataType.Domain = Attributes[indexOne].Type.Domain;
+                            dataType.DomainString = Attributes[indexOne].Type.DomainString;
 
-                        if (!dataType.CheckDataTypeOfVariables(valueTwo))
-                        {
-                            MessageError = String.Format("Conversion failed when converting the varchar value {0} to data type {1}.", valueTwo, typenameOne);
-                            return string.Empty;
-                        }
-
-                        // Duyệt các hàng
-                        for (int i = 0; i < countTripleOne; i++)
-                        {
-                            // Tập hợp trong 1 bộ 3
-                            ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
-                            
-                            for(int j = 0; j < valueOfTriple.Value.Count; j++)
+                            if (!dataType.CheckDataTypeOfMultiVariables(valueTwo))
                             {
-                                // duyệt từng cặp xác xuất và so sánh
-                                if (this.CompareTriple(valueOfTriple.Value[j].ToString().Trim(), valueTwo.Trim(), operaterStr, typenameOne))
+                                MessageError = String.Format("Conversion failed when converting the varchar value {0} to data type {1}.", valueTwo, typenameOne);
+                                return string.Empty;
+                            }
+
+                            // Duyệt các hàng
+                            for (int i = 0; i < countTripleOne; i++)
+                            {
+                                // Tập hợp trong 1 bộ 3
+                                ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
+
+                                for (int j = 0; j < valueOfTriple.Value.Count; j++)
                                 {
-                                    minProb += tuple.Triples[indexOne].MinProb[i];
-                                    maxProb += tuple.Triples[indexOne].MaxProb[i];
-                                    break;
+                                    // duyệt từng cặp xác xuất và so sánh
+                                    if (this.CompareTripleNew(valueOfTriple.Value[j].ToString().Trim(), valueTwo.Trim(), operaterStr, typenameOne))
+                                    {
+                                        minProb += tuple.Triples[indexOne].MinProb[i];
+                                        maxProb += tuple.Triples[indexOne].MaxProb[i];
+                                        break;
+                                    }
+                                }
+                            }
+                        } else
+                        {
+                            if (valueTwo.Contains("'"))
+                            {
+                                int count = valueTwo.Split(new char[] { '\'' }).Length - 1;
+
+                                if (valueTwo.Substring(0, 1) != "'")
+                                {
+                                    MessageError = "Unclosed quotation mark before the character string " + valueTwo;
+                                    return string.Empty;
+                                }
+
+                                if (valueTwo.Substring(valueTwo.Length - 1, 1) != "'")
+                                {
+                                    MessageError = "Unclosed quotation mark after the character string " + valueTwo;
+                                    return string.Empty;
+                                }
+
+                                if (count != 2)
+                                {
+                                    MessageError = "Unclosed quotation mark at the character string " + valueTwo;
+                                    return string.Empty;
+                                }
+
+                                valueTwo = valueTwo.Remove(0, 1);
+                                valueTwo = valueTwo.Remove(valueTwo.Length - 1, 1);
+                            }
+
+                            countTripleOne = tuple.Triples[indexOne].Value2.Count; // số lượng các cặp xác xuất trong thuộc tính
+                            typenameOne = Attributes[indexOne].Type.DataType;
+
+                            ProbDataType dataType = new ProbDataType();
+                            dataType.TypeName = Attributes[indexOne].Type.TypeName;
+                            dataType.DataType = Attributes[indexOne].Type.DataType;
+                            dataType.Domain = Attributes[indexOne].Type.Domain;
+                            dataType.DomainString = Attributes[indexOne].Type.DomainString;
+
+                            if (!dataType.CheckDataTypeOfVariables(valueTwo))
+                            {
+                                MessageError = String.Format("Conversion failed when converting the varchar value {0} to data type {1}.", valueTwo, typenameOne);
+                                return string.Empty;
+                            }
+
+                            // Duyệt các hàng
+                            for (int i = 0; i < countTripleOne; i++)
+                            {
+                                // Tập hợp trong 1 bộ 3
+                                ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
+
+                                for (int j = 0; j < valueOfTriple.Value.Count; j++)
+                                {
+                                    // duyệt từng cặp xác xuất và so sánh
+                                    if (this.CompareTriple(valueOfTriple.Value[j].ToString().Trim(), valueTwo.Trim(), operaterStr, typenameOne))
+                                    {
+                                        minProb += tuple.Triples[indexOne].MinProb[i];
+                                        maxProb += tuple.Triples[indexOne].MaxProb[i];
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -861,6 +924,42 @@ namespace PRDB_Sqlite.BLL
             }
 
         }
+
+        public bool CompareTripleNew(object valueOne, string valueTwo, string opratorStr, string typename)
+        {
+            switch (opratorStr)
+            {
+                case "_<":
+                    {
+                        break;
+                    }
+                case "_>":
+                    {
+                        break;
+                    }
+                case "<=":
+                    {
+                        break;
+                    }
+                case ">=":
+                    {
+                        break;
+                    }
+                case "_=":
+                    {
+
+                        break;
+                    }
+                case "!=":
+                    {
+                        break;
+                    }
+                default: return false;
+            }
+
+            return true;
+        }
+
         public bool CompareTriple(object valueOne, string valueTwo, string opratorStr, string typename)
         {
             switch (typename)

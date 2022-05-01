@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PRDB_Sqlite.Util;
 
 namespace PRDB_Sqlite.BLL
 {
@@ -115,16 +116,28 @@ namespace PRDB_Sqlite.BLL
             return false;
         }
 
+        public bool CheckDataTypeOfMultiVariables(string value)
+        {
+            HandleValue handleValue = new HandleValue();
+            List<Object> listValue = handleValue.stringToMultiValue(value);
+
+            foreach (String single in listValue)
+            {
+                if (!CheckDataTypeOfVariables(single))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public bool CheckDataTypeOfVariables(string value)
         {
             try
             {
-
-              
-
                 this.GetDataType();
-                
-
+            
                  switch (this.DataType)
                 {
                     case "Int16": Convert.ToInt16(value); break;

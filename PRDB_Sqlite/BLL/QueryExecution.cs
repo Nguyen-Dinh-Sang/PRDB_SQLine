@@ -1166,6 +1166,7 @@ namespace PRDB_Sqlite.BLL
                         if (!Condition.CheckConditionString())
                         {
                             this.MessageError = Condition.MessageError;
+                            Console.WriteLine("Lỗi khúc này 1");
                             return false;
                         }
 
