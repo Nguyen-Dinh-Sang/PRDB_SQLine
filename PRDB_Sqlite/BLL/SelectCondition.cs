@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PRDB_Sqlite.Util;
 
 namespace PRDB_Sqlite.BLL
 {
@@ -661,15 +662,11 @@ namespace PRDB_Sqlite.BLL
                                 // Tập hợp trong 1 bộ 3
                                 ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
 
-                                for (int j = 0; j < valueOfTriple.Value.Count; j++)
+                                if (this.CompareTripleNew(valueOfTriple, valueTwo.Trim(),operaterStr, typenameOne))
                                 {
-                                    // duyệt từng cặp xác xuất và so sánh
-                                    if (this.CompareTripleNew(valueOfTriple.Value[j].ToString().Trim(), valueTwo.Trim(), operaterStr, typenameOne))
-                                    {
-                                        minProb += tuple.Triples[indexOne].MinProb[i];
-                                        maxProb += tuple.Triples[indexOne].MaxProb[i];
-                                        break;
-                                    }
+                                    minProb += tuple.Triples[indexOne].MinProb[i];
+                                    maxProb += tuple.Triples[indexOne].MaxProb[i];
+                                    break;
                                 }
                             }
                         } else
@@ -925,39 +922,81 @@ namespace PRDB_Sqlite.BLL
 
         }
 
-        public bool CompareTripleNew(object valueOne, string valueTwo, string opratorStr, string typename)
+        public bool CompareTripleNew(ValueOfTriple valueOfTriple, string valueTwo, string opratorStr, string typename)
         {
+            HandleValue handleValue = new HandleValue();
+            List<Object> listValue = handleValue.stringToMultiValue(valueTwo);
+            CompareTriple compareTriple = new CompareTriple();
+
             switch (opratorStr)
             {
                 case "_<":
                     {
-                        break;
+                        if (compareTriple.lessThan(valueOfTriple, listValue))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 case "_>":
                     {
-                        break;
+                        if (compareTriple.greaterThan(valueOfTriple, listValue))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 case "<=":
                     {
-                        break;
+                        if (compareTriple.lessThanOrEqual(valueOfTriple, listValue))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 case ">=":
                     {
-                        break;
+                        if (compareTriple.greaterThanOrEqual(valueOfTriple, listValue))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 case "_=":
                     {
-
-                        break;
+                       if(compareTriple.equal(valueOfTriple, listValue))
+                        {
+                            return true;
+                        } else
+                        {
+                            return false;
+                        }
                     }
                 case "!=":
                     {
-                        break;
+                        if (compareTriple.difference(valueOfTriple, listValue))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 default: return false;
             }
-
-            return true;
         }
 
         public bool CompareTriple(object valueOne, string valueTwo, string opratorStr, string typename)
