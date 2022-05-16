@@ -564,41 +564,36 @@ namespace PRDB_Sqlite.BLL
                         return string.Empty;
                     }
 
+                    CompareProbTuple compare = new CompareProbTuple();
 
                     for (int i = 0; i < countTripleOne; i++)
                     {
                         // Tập hợp trong 1 bộ 3
                         ValueOfTriple valueOfTriple = tuple.Triples[indexOne].Value2[i];
 
-                        for (int ii = 0; ii < valueOfTriple.Value.Count; ii++)
+                        for (int j = 0; j < countTripleTwo; j++)
                         {
-                            for (int j = 0; j < countTripleTwo; j++)
+                            // Tập hợp trong 1 bộ 3
+                            ValueOfTriple valueOfTriple2 = tuple.Triples[indexTwo].Value2[j];
+
+                            if (compare.compareTriple(valueOfTriple, valueOfTriple2))
                             {
-                                // Tập hợp trong 1 bộ 3
-                                ValueOfTriple valueOfTriple2 = tuple.Triples[indexTwo].Value2[j];
-
-                                for (int jj = 0; jj < valueOfTriple2.Value.Count; jj++)
+                                switch (operaterStr)
                                 {
-                                    if (EQUAL(valueOfTriple.Value[ii].ToString().Trim(), valueOfTriple2.Value[jj].ToString().Trim(), typenameOne))
-                                    {
-                                        switch (operaterStr)
-                                        {
-                                            case "equal_in":
-                                                minProb += tuple.Triples[indexOne].MinProb[i] * tuple.Triples[indexTwo].MinProb[j];
-                                                maxProb = Math.Min(1, maxProb + tuple.Triples[indexOne].MaxProb[i] * tuple.Triples[indexTwo].MaxProb[j]);
-                                                break;
+                                    case "equal_in":
+                                        minProb += tuple.Triples[indexOne].MinProb[i] * tuple.Triples[indexTwo].MinProb[j];
+                                        maxProb = Math.Min(1, maxProb + tuple.Triples[indexOne].MaxProb[i] * tuple.Triples[indexTwo].MaxProb[j]);
+                                        break;
 
-                                            case "equal_ig":
-                                                minProb += Math.Min(0, tuple.Triples[indexOne].MinProb[i] + tuple.Triples[indexTwo].MinProb[j] - 1);
-                                                maxProb = Math.Min(1, maxProb + Math.Min(tuple.Triples[indexOne].MaxProb[i], tuple.Triples[indexTwo].MaxProb[j]));
-                                                break;
-                                            case "equal_me":
-                                                minProb = 0;
-                                                maxProb = Math.Min(1, maxProb + 0);
-                                                break;
-                                            default: break;
-                                        }
-                                    }
+                                    case "equal_ig":
+                                        minProb += Math.Min(0, tuple.Triples[indexOne].MinProb[i] + tuple.Triples[indexTwo].MinProb[j] - 1);
+                                        maxProb = Math.Min(1, maxProb + Math.Min(tuple.Triples[indexOne].MaxProb[i], tuple.Triples[indexTwo].MaxProb[j]));
+                                        break;
+                                    case "equal_me":
+                                        minProb = 0;
+                                        maxProb = Math.Min(1, maxProb + 0);
+                                        break;
+                                    default: break;
                                 }
                             }
                         }

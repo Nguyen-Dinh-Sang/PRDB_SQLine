@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRDB_Sqlite.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -1120,84 +1121,281 @@ namespace PRDB_Sqlite.BLL
             String queryString = StandardizeQuery(queryText);
             Console.WriteLine("ExecuteQuery: " + queryString);
             String query = queryString;
-            if (query.Contains("union") || query.Contains("intersect") || query.Contains("except"))
+
+            if (query.Contains("= ⊗_ig") || query.Contains("= ⊗_in") || query.Contains("= ⊗_me") ||
+                query.Contains("= ⊕_ig") || query.Contains("= ⊕_in") || query.Contains("= ⊕_me") ||
+                query.Contains("= ⊖_ig") || query.Contains("= ⊖_in") || query.Contains("= ⊖_me"))
             {
-                return unionIntersectExcept(queryString);
+                return handleEqual(queryString);
             } else
             {
-                try
+                if (query.Contains("union") || query.Contains("intersect") || query.Contains("except"))
                 {
-                    if (!QueryAnalyze(queryString)) return false;
-
-                    if (this.selectedRelations.Count == 2)
+                    return unionIntersectExcept(queryString);
+                }
+                else
+                {
+                    try
                     {
-                        if (flagNaturalJoin != true)
-                            this.selectedRelations[0] = Descartes();
+                        if (!QueryAnalyze(queryString)) return false;
+
+                        if (this.selectedRelations.Count == 2)
+                        {
+                            if (flagNaturalJoin != true)
+                                this.selectedRelations[0] = Descartes();
+                            else
+                                this.selectedRelations[0] = NaturalJoin();
+                        }
                         else
-                            this.selectedRelations[0] = NaturalJoin();
+                        {
+                            foreach (ProbAttribute attr in this.selectedRelations[0].Scheme.Attributes)
+                            {
+                                if (!attr.AttributeName.Contains("."))
+                                    attr.AttributeName = String.Format("{0}.{1}", this.selectedRelations[0].RelationName, attr.AttributeName);
+                            }
+
+                        }
+
+
+                        if (!queryString.Contains("where"))
+                        {
+                            this.relationResult = getRelationBySelectAttribute(this.selectedRelations[0], this.selectedAttributes);
+
+                            Console.WriteLine("Compare and Return");
+
+                            CompareProbTuple compareProbTuple = new CompareProbTuple(this.relationResult);
+
+                            relationResult = compareProbTuple.equal("⊕_in");
+
+                            return true;
+                        }
+                        else
+                        {
+                            // Đang làm dỡ phần này
+                            SelectCondition Condition = new SelectCondition(this.selectedRelations[0], this.conditionString);
+                            if (!Condition.CheckConditionString())
+                            {
+                                this.MessageError = Condition.MessageError;
+                                Console.WriteLine("Lỗi khúc này 1");
+                                return false;
+                            }
+
+                            foreach (ProbTuple tuple in this.selectedRelations[0].tuples)
+                            {
+                                if (Condition.Satisfied(tuple))
+                                    this.relationResult.tuples.Add(tuple);
+                            }
+
+                            if (Condition.MessageError != string.Empty)
+                            {
+                                this.MessageError = Condition.MessageError;
+                                return false;
+                            }
+
+                            if (Condition.conditionString == string.Empty)
+                            {
+                                this.MessageError = Condition.MessageError;
+                                return false;
+                            }
+
+                            this.relationResult.Scheme = this.selectedRelations[0].Scheme;
+                            this.relationResult = getRelationBySelectAttribute(this.relationResult, this.selectedAttributes);
+                        }
                     }
-                    else
+                    catch
                     {
-                        foreach (ProbAttribute attr in this.selectedRelations[0].Scheme.Attributes)
-                        {
-                            if (!attr.AttributeName.Contains("."))
-                                attr.AttributeName = String.Format("{0}.{1}", this.selectedRelations[0].RelationName, attr.AttributeName);
-                        }
-
+                        return false;
                     }
-
-
-                    if (!queryString.Contains("where"))
-                    {
-                        this.relationResult = getRelationBySelectAttribute(this.selectedRelations[0], this.selectedAttributes);
-
-                        Console.WriteLine("Compare and Return");
-
-                        CompareProbTuple compareProbTuple = new CompareProbTuple(this.relationResult);
-
-                        relationResult = compareProbTuple.equal("⊕_in");
-
-                        return true;
-                    }
-                    else
-                    {
-                        // Đang làm dỡ phần này
-                        SelectCondition Condition = new SelectCondition(this.selectedRelations[0], this.conditionString);
-                        if (!Condition.CheckConditionString())
-                        {
-                            this.MessageError = Condition.MessageError;
-                            Console.WriteLine("Lỗi khúc này 1");
-                            return false;
-                        }
-
-                        foreach (ProbTuple tuple in this.selectedRelations[0].tuples)
-                        {
-                            if (Condition.Satisfied(tuple))
-                                this.relationResult.tuples.Add(tuple);
-                        }
-
-                        if (Condition.MessageError != string.Empty)
-                        {
-                            this.MessageError = Condition.MessageError;
-                            return false;
-                        }
-
-                        if (Condition.conditionString == string.Empty)
-                        {
-                            this.MessageError = Condition.MessageError;
-                            return false;
-                        }
-
-                        this.relationResult.Scheme = this.selectedRelations[0].Scheme;
-                        this.relationResult = getRelationBySelectAttribute(this.relationResult, this.selectedAttributes);
-                    }
+                    return true;
                 }
-                catch
-                {
-                    return false;
-                }
-                return true;
             }
        }
-   }
+
+        bool handleEqual(String queryString)
+        {
+            Console.WriteLine("handleEqual: " + queryString);
+            String newQuery = handleStringQuery(queryString);
+            Console.WriteLine("newQuery: " + newQuery);
+
+            if(ExecuteQuery(newQuery))
+            {
+                ProbRelation relationResult = new ProbRelation();
+                relationResult = this.relationResult;
+                List<ProbAttribute> attributes = new List<ProbAttribute>();
+                attributes = relationResult.Scheme.Attributes;
+
+                String attributesOne = getAttributesOne(subQuery(newQuery));
+                String attributesTwo = getAttributesTwo(subQuery(newQuery));
+
+                int indexOne = getIndexAttribute(attributesOne, attributes);
+                int indextwo = getIndexAttribute(attributesTwo, attributes);
+
+                String minString = getMin(subQueryMinMax(newQuery));
+                String maxString = getMax(subQueryMinMax(newQuery));
+
+                Double min = Double.Parse(minString);
+                Double max = Double.Parse(maxString);
+
+                String condition = getCondition(queryString);
+
+                HandleEqual handleEqual = new HandleEqual(relationResult, indexOne, indextwo, min, max, condition);
+
+                this.relationResult = handleEqual.getResult();
+
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
+
+        int getIndexAttribute(String attributeName, List<ProbAttribute> attributes)
+        {
+            for (int i = 0; i < attributes.Count; i++)
+            {
+                if (attributeName.ToLower().Equals(getAttributesTwo(attributes[i].AttributeName.ToLower())))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        String getCondition(String queryString)
+        {
+            if (queryString.Contains("= ⊗_ig"))
+            {
+                return "⊗_ig";
+            }
+
+            if (queryString.Contains("= ⊗_in"))
+            {
+                return "⊗_in";
+            }
+
+            if (queryString.Contains("= ⊗_me"))
+            {
+                return "⊗_me";
+            }
+
+            //
+            if (queryString.Contains("= ⊕_ig"))
+            {
+                return "⊕_ig";
+            }
+
+            if (queryString.Contains("= ⊕_in"))
+            {
+                return "⊕_in";
+            }
+
+            if (queryString.Contains("= ⊕_me"))
+            {
+                return "⊕_me";
+            }
+
+            //
+            if (queryString.Contains("= ⊖_ig"))
+            {
+                return "⊖_ig";
+            }
+
+            if (queryString.Contains("= ⊖_in"))
+            {
+                return "⊖_in";
+            }
+
+            return "⊖_me";
+        }
+
+        string handleStringQuery(String queryString)
+        {
+            if (queryString.Contains("= ⊗_ig"))
+            {
+                return queryString.Replace("= ⊗_ig", "equal_in");
+            }
+
+            if (queryString.Contains("= ⊗_in"))
+            {
+                return queryString.Replace("= ⊗_in", "equal_in");
+            }
+
+            if (queryString.Contains("= ⊗_me"))
+            {
+                return queryString.Replace("= ⊗_me", "equal_in");
+            }
+
+            //
+            if (queryString.Contains("= ⊕_ig"))
+            {
+                return queryString.Replace("= ⊕_ig", "equal_in");
+            }
+
+            if (queryString.Contains("= ⊕_in"))
+            {
+                return queryString.Replace("= ⊕_in", "equal_in");
+            }
+
+            if (queryString.Contains("= ⊕_me"))
+            {
+                return queryString.Replace("= ⊕_me", "equal_in");
+            }
+
+            //
+            if (queryString.Contains("= ⊖_ig"))
+            {
+                return queryString.Replace("= ⊖_ig", "equal_in");
+            }
+
+            if (queryString.Contains("= ⊖_in"))
+            {
+                return queryString.Replace("= ⊖_in", "equal_in");
+            }
+
+            return queryString.Replace("= ⊖_me", "equal_in");
+        }
+
+        string subQuery(String queryString)
+        {
+            int startIndex = queryString.IndexOf("(") + 1;
+            int lastIndex = queryString.IndexOf(")");
+            
+            return queryString.Substring(startIndex, (lastIndex - startIndex)).Trim();
+        }
+
+        string getAttributesOne(String queryString)
+        {
+            int startIndex = queryString.IndexOf(".") + 1;
+            int lastIndex = queryString.IndexOf(" ");
+            return queryString.Substring(startIndex, (lastIndex - startIndex)).Trim();
+        }
+
+        string getAttributesTwo(String queryString)
+        {
+            int startIndex = queryString.LastIndexOf(".") + 1;
+            int lastIndex = queryString.Length;
+            return queryString.Substring(startIndex, (lastIndex - startIndex)).Trim();
+        }
+
+        string subQueryMinMax(String queryString)
+        {
+            int startIndex = queryString.IndexOf("[") + 1;
+            int lastIndex = queryString.IndexOf("]");
+
+            return queryString.Substring(startIndex, (lastIndex - startIndex)).Trim();
+        }
+
+        string getMin(String queryString)
+        {
+            int lastIndex = queryString.IndexOf(" ");
+            return queryString.Substring(0, lastIndex).Trim();
+        }
+
+        string getMax(String queryString)
+        {
+            int startIndex = queryString.LastIndexOf(" ") + 1;
+            return queryString.Substring(startIndex, (queryString.Length - startIndex)).Trim();
+        }
+    }
 }

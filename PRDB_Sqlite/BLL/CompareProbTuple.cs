@@ -19,6 +19,11 @@ namespace PRDB_Sqlite.BLL
             this.relationResult = new ProbRelation();
         }
 
+        public CompareProbTuple()
+        {
+
+        }
+
         public ProbRelation equal(String rule)
         {
             //so sánh 2 dòng với nhau, mỗi dòng là 1 ProbTuple
@@ -91,20 +96,19 @@ namespace PRDB_Sqlite.BLL
                             case "⊕_in":
                                 {
                                     result.MaxProb[i] = (cell1.MaxProb[i] + cell2.MaxProb[j]) - (cell1.MaxProb[i] * cell2.MaxProb[j]);
-
-                                    result.MinProb[i] = (cell1.MinProb[i] + cell1.MinProb[j]) - (cell1.MinProb[i] * cell1.MinProb[j]);
+                                    result.MinProb[i] = (cell1.MinProb[i] + cell2.MinProb[j]) - (cell1.MinProb[i] * cell2.MinProb[j]);
                                     break;
                                 }
                             case "⊕_ig":
                                 {
-                                    result.MinProb[i] = Math.Max(cell1.MinProb[i], cell1.MinProb[j]);
+                                    result.MinProb[i] = Math.Max(cell1.MinProb[i], cell2.MinProb[j]);
                                     result.MaxProb[i] = Math.Min(1, (cell1.MaxProb[i] + cell2.MaxProb[j]));
                                     break;
                                 }
 
                             case "⊕_me":
                                 {
-                                    result.MinProb[i] = Math.Min(1, (cell1.MinProb[i] + cell1.MinProb[j]));
+                                    result.MinProb[i] = Math.Min(1, (cell1.MinProb[i] + cell2.MinProb[j]));
                                     result.MaxProb[i] = Math.Min(1, (cell1.MaxProb[i] + cell2.MaxProb[j]));
                                     break;
                                 }
@@ -168,7 +172,7 @@ namespace PRDB_Sqlite.BLL
             return true;
         }
 
-        private Boolean compareTriple(ValueOfTriple set1, ValueOfTriple set2)
+        public Boolean compareTriple(ValueOfTriple set1, ValueOfTriple set2)
         {
             if (set1.Value.Count != set2.Value.Count)
             {
