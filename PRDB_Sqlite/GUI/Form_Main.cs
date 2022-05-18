@@ -132,6 +132,11 @@ namespace PRDB_Sqlite.GUI
             ribbonPageGroupConjuntion.Visible = false;
             ribbonPageGroupDisjunction.Visible = false;
             ribbonPageGroupDifference.Visible = false;
+
+            //
+            ribbonPageGroupOperationsOnSet.Visible = false;
+            //
+
             xtraTabPageQuery.PageEnabled = false;
 
         }
@@ -2559,6 +2564,11 @@ namespace PRDB_Sqlite.GUI
             ribbonPageGroupConjuntion.Visible = true;
             ribbonPageGroupDisjunction.Visible = true;
             ribbonPageGroupDifference.Visible = true;
+
+            //
+            ribbonPageGroupOperationsOnSet.Visible = true;
+            //
+
             xtraTabPageQuery.PageEnabled = true;
             xtraTabDatabase.SelectedTabPage = xtraTabPageQuery;
 
@@ -2656,6 +2666,10 @@ namespace PRDB_Sqlite.GUI
                 ribbonPageGroupDisjunction.Visible = false;
                 ribbonPageGroupDifference.Visible = false;
 
+                //
+                ribbonPageGroupOperationsOnSet.Visible = false;
+                //
+
                 xtraTabPageQuery.PageEnabled = false;
 
             }
@@ -2713,6 +2727,10 @@ namespace PRDB_Sqlite.GUI
                     ribbonPageGroupEquality.Visible = false;
                     xtraTabPageQuery.PageEnabled = false;
 
+                    //
+                    ribbonPageGroupOperationsOnSet.Visible = false;
+                    //
+
                     GridViewResult.Rows.Clear();
                     GridViewResult.Columns.Clear();
                     txtQuery.Text = "";
@@ -2760,6 +2778,10 @@ namespace PRDB_Sqlite.GUI
                     ribbonPageGroupDifference.Visible = false;
                     xtraTabPageQuery.PageEnabled = false;
                     barButtonItemExcuteQuery.Enabled = false;
+
+                    //
+                    ribbonPageGroupOperationsOnSet.Visible = false;
+                    //
                 }
 
 
@@ -2806,6 +2828,10 @@ namespace PRDB_Sqlite.GUI
                     ribbonPageGroupDisjunction.Visible = false;
                     ribbonPageGroupDifference.Visible = false;
                     barButtonItemSaveQuery.Enabled = false;
+
+                    //
+                    ribbonPageGroupOperationsOnSet.Visible = false;
+                    //
 
                     GridViewResult.Rows.Clear();
                     GridViewResult.Columns.Clear();
@@ -3363,6 +3389,23 @@ namespace PRDB_Sqlite.GUI
                 txtQuery.SelectionStart = index + 10;
             }
         }
+
+        //
+        private void barButtonLargerOperationsItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void barButtonSmallerOperationsItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonDifferentOperationsItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+        //
 
 
         private void ClearAll()

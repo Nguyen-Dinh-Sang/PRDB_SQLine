@@ -7,7 +7,8 @@ using System.Windows.Forms;
 
 namespace PRDB_Sqlite.BLL
 {
-   public class QueryExecution
+    //"≥ ≥↦ ⩠⊆⊇ ⊈ ⊉"
+    public class QueryExecution
    {
        public List<ProbRelation> selectedRelations { get; set; }
        public ProbRelation relationResult { get; set; }

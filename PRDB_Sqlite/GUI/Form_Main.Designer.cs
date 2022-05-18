@@ -76,6 +76,11 @@
             this.barButtonItem_Bang_ignorance = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Bang_independence = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Bang_mutualexclusion = new DevExpress.XtraBars.BarButtonItem();
+            //
+            this.barButtonDifferentOperations = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonLargerOperations = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonSmallerOperations = new DevExpress.XtraBars.BarButtonItem();
+            //
             this.ribbonPageDB = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -102,6 +107,11 @@
             this.ribbonPageGroupConjuntion = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupDisjunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupDifference = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+
+            //
+            this.ribbonPageGroupOperationsOnSet = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            //
+
             this.ribbonPageGroupEquality = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -294,7 +304,10 @@
             this.barButtonItem_Tru_mutualexclusion,
             this.barButtonItem_Bang_ignorance,
             this.barButtonItem_Bang_independence,
-            this.barButtonItem_Bang_mutualexclusion});
+            this.barButtonItem_Bang_mutualexclusion,
+            this.barButtonLargerOperations,
+            this.barButtonSmallerOperations,
+            this.barButtonDifferentOperations});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -623,6 +636,38 @@
             this.barButtonItem_Tru_ignorance.Id = 32;
             this.barButtonItem_Tru_ignorance.Name = "barButtonItem_Tru_ignorance";
             this.barButtonItem_Tru_ignorance.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Tru_ignorance_ItemClick);
+
+            //
+            this.barButtonLargerOperations.Appearance.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonLargerOperations.Appearance.Options.UseFont = true;
+            this.barButtonLargerOperations.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonLargerOperations.AppearanceDisabled.Options.UseFont = true;
+            this.barButtonLargerOperations.Caption = "⊇";
+            this.barButtonLargerOperations.Id = 32;
+            this.barButtonLargerOperations.Name = "barButtonLargerOperations";
+            this.barButtonLargerOperations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLargerOperationsItemClick);
+
+
+            this.barButtonSmallerOperations.Appearance.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonSmallerOperations.Appearance.Options.UseFont = true;
+            this.barButtonSmallerOperations.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonSmallerOperations.AppearanceDisabled.Options.UseFont = true;
+            this.barButtonSmallerOperations.Caption = "⊆";
+            this.barButtonSmallerOperations.Id = 32;
+            this.barButtonSmallerOperations.Name = "barButtonSmallerOperations";
+            this.barButtonSmallerOperations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonSmallerOperationsItemClick);
+
+            this.barButtonDifferentOperations.Appearance.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonDifferentOperations.Appearance.Options.UseFont = true;
+            this.barButtonDifferentOperations.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonDifferentOperations.AppearanceDisabled.Options.UseFont = true;
+            this.barButtonDifferentOperations.Caption = "⊈";
+            this.barButtonDifferentOperations.Id = 32;
+            this.barButtonDifferentOperations.Name = "barButtonDifferentOperations";
+            this.barButtonDifferentOperations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDifferentOperationsItemClick);
+            //
+
+
             // 
             // barButtonItem_Tru_independence
             // 
@@ -794,6 +839,7 @@
             this.ribbonPageGroupDisjunction,
             this.ribbonPageGroupDifference,
             this.ribbonPageGroupEquality,
+            this.ribbonPageGroupOperationsOnSet,
             this.ribbonPageGroup24,
             this.ribbonPageGroup25});
             this.ribbonPageQuery.Name = "ribbonPageQuery";
@@ -846,6 +892,16 @@
             this.ribbonPageGroupDifference.Name = "ribbonPageGroupDifference";
             this.ribbonPageGroupDifference.Text = "Difference";
             this.ribbonPageGroupDifference.Visible = false;
+
+            //
+            this.ribbonPageGroupOperationsOnSet.ItemLinks.Add(this.barButtonLargerOperations);
+            this.ribbonPageGroupOperationsOnSet.ItemLinks.Add(this.barButtonSmallerOperations);
+            this.ribbonPageGroupOperationsOnSet.ItemLinks.Add(this.barButtonDifferentOperations);
+            this.ribbonPageGroupOperationsOnSet.Name = "ribbonPageGroupOperationsOnSet";
+            this.ribbonPageGroupOperationsOnSet.Text = "Operations On Set";
+            this.ribbonPageGroupOperationsOnSet.Visible = false;
+            //
+
             // 
             // ribbonPageGroupEquality
             // 
@@ -1961,6 +2017,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupDisjunction;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupDifference;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupEquality;
+
+        //
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupOperationsOnSet;
+        //
+
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Hoi_Ignor;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Hoi_independence;
@@ -1973,6 +2034,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Tru_mutualexclusion;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Bang_ignorance;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Bang_independence;
+        //
+        private DevExpress.XtraBars.BarButtonItem barButtonLargerOperations;
+        private DevExpress.XtraBars.BarButtonItem barButtonSmallerOperations;
+        private DevExpress.XtraBars.BarButtonItem barButtonDifferentOperations;
+        //
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Bang_mutualexclusion;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private System.Windows.Forms.ToolStrip ToolStripTitleOV;
