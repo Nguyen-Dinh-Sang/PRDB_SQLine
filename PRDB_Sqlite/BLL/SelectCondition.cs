@@ -13,7 +13,7 @@ namespace PRDB_Sqlite.BLL
         public ProbRelation relations { get; set; }
         public ProbTuple tuple { get; set; }
         public string conditionString { get; set; }
-        static public string[] Operator = new string[18] { "_<", "_>", "<=", ">=", "_=", "!=", "⊗_in", "⊗_ig", "⊗_me", "⊕_in", "⊕_ig", "⊕_me", "equal_in", "equal_ig", "equal_me", "⊖_ig", "⊖_in", "⊖_me"};
+        static public string[] Operator = new string[21] { "_<", "_>", "<=", ">=", "_=", "!=", "⊗_in", "⊗_ig", "⊗_me", "⊕_in", "⊕_ig", "⊕_me", "equal_in", "equal_ig", "equal_me", "⊖_ig", "⊖_in", "⊖_me", "⊆", "⊇", "⊉" };
         private readonly List<ProbAttribute> Attributes = new List<ProbAttribute>();
         public string MessageError { get; set; }
 
@@ -926,6 +926,7 @@ namespace PRDB_Sqlite.BLL
             switch (opratorStr)
             {
                 case "_<":
+                case "⊆":
                     {
                         if (compareTriple.lessThan(valueOfTriple, listValue))
                         {
@@ -937,6 +938,7 @@ namespace PRDB_Sqlite.BLL
                         }
                     }
                 case "_>":
+                case "⊇":
                     {
                         if (compareTriple.greaterThan(valueOfTriple, listValue))
                         {
@@ -970,6 +972,7 @@ namespace PRDB_Sqlite.BLL
                         }
                     }
                 case "_=":
+                case "⊉":
                     {
                        if(compareTriple.equal(valueOfTriple, listValue))
                         {

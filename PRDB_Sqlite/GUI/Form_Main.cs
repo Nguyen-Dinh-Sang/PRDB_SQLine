@@ -40,7 +40,7 @@ namespace PRDB_Sqlite.GUI
 
         #region * Variables
         ImageIndex DB_ImgIndex, Folder_ImgIndex, Scheme_ImgIndex, Relation_ImgIndex, Query_ImgIndex, Attribute_ImgIndex;
-        static public string[] Operator = new string[17] { "and", "or", "<", ">", "<=", ">=", "=", "!=", "⊗_in", "⊗_ig", "⊗_me", "⊕_in", "⊕_ig", "⊕_me", "equal_in", "equal_ig", "equal_me" };
+        static public string[] Operator = new string[23] { "and", "or", "<", ">", "<=", ">=", "=", "!=", "⊗_in", "⊗_ig", "⊗_me", "⊕_in", "⊕_ig", "⊕_me", "equal_in", "equal_ig", "equal_me", "⊆", "⊇", "⊉", "⊖_ig", "⊖_in", "⊖_me"};
         public ProbTriple row { get; set; }
 
 
@@ -3393,17 +3393,41 @@ namespace PRDB_Sqlite.GUI
         //
         private void barButtonLargerOperationsItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            if (txtQuery.Text == "") txtQuery.Text = @" ⊇ ";
+
+            else
+            {
+
+                int index = txtQuery.SelectionStart;
+                txtQuery.Text = txtQuery.Text.Insert(index, @" ⊇ ");
+                txtQuery.SelectionStart = index + 6;
+            }
         }
 
         private void barButtonSmallerOperationsItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (txtQuery.Text == "") txtQuery.Text = @" ⊆ ";
 
+            else
+            {
+
+                int index = txtQuery.SelectionStart;
+                txtQuery.Text = txtQuery.Text.Insert(index, @" ⊆ ");
+                txtQuery.SelectionStart = index + 6;
+            }
         }
 
         private void barButtonDifferentOperationsItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (txtQuery.Text == "") txtQuery.Text = @" ⊉ ";
 
+            else
+            {
+
+                int index = txtQuery.SelectionStart;
+                txtQuery.Text = txtQuery.Text.Insert(index, @" ⊉ ");
+                txtQuery.SelectionStart = index + 6;
+            }
         }
         //
 

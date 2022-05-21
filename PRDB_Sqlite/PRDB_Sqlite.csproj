@@ -225,6 +225,7 @@
     <Compile Include="Util\CompareTwoTriple.cs" />
     <Compile Include="Util\HandleEqual.cs" />
     <Compile Include="Util\HandleValue.cs" />
+    <Compile Include="Util\ReplaceString.cs" />
     <EmbeddedResource Include="GUI\Form_InputType.resx">
       <DependentUpon>Form_InputType.cs</DependentUpon>
       <SubType>Designer</SubType>

@@ -643,7 +643,7 @@
             this.barButtonLargerOperations.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonLargerOperations.AppearanceDisabled.Options.UseFont = true;
             this.barButtonLargerOperations.Caption = "⊇";
-            this.barButtonLargerOperations.Id = 32;
+            this.barButtonLargerOperations.Id = 38;
             this.barButtonLargerOperations.Name = "barButtonLargerOperations";
             this.barButtonLargerOperations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLargerOperationsItemClick);
 
@@ -653,7 +653,7 @@
             this.barButtonSmallerOperations.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonSmallerOperations.AppearanceDisabled.Options.UseFont = true;
             this.barButtonSmallerOperations.Caption = "⊆";
-            this.barButtonSmallerOperations.Id = 32;
+            this.barButtonSmallerOperations.Id = 39;
             this.barButtonSmallerOperations.Name = "barButtonSmallerOperations";
             this.barButtonSmallerOperations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonSmallerOperationsItemClick);
 
@@ -661,8 +661,8 @@
             this.barButtonDifferentOperations.Appearance.Options.UseFont = true;
             this.barButtonDifferentOperations.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonDifferentOperations.AppearanceDisabled.Options.UseFont = true;
-            this.barButtonDifferentOperations.Caption = "⊈";
-            this.barButtonDifferentOperations.Id = 32;
+            this.barButtonDifferentOperations.Caption = "⊉";
+            this.barButtonDifferentOperations.Id = 40;
             this.barButtonDifferentOperations.Name = "barButtonDifferentOperations";
             this.barButtonDifferentOperations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDifferentOperationsItemClick);
             //

@@ -1119,6 +1119,9 @@ namespace PRDB_Sqlite.BLL
 
         internal bool ExecuteQuery(String queryText)
        {
+            ReplaceString replaceString = new ReplaceString(queryText);
+            queryText = replaceString.replace();
+
             String queryString = StandardizeQuery(queryText);
             Console.WriteLine("ExecuteQuery: " + queryString);
             String query = queryString;
