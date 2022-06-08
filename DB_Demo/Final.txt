@@ -3,31 +3,47 @@
 3: Giới thiệu về database tạo sẵn.
 
 4: Chiếu
-	- Lấy *
+	- Lấy *.
 	select * from patient
 
-	- Lấy thuộc tính
-	select name, age from patient
+	- Lấy thuộc tính.
+	select p_name, p_disease from patient
+	tuyển độc lập.
 
 5: Chọn
-	- Lấy AB bình thường
-	select * from patient where (patient.bood = 'AB' )[0.4 , 1]
+	- Lấy p_cost = 7, có thể đổi xác suất vẫn ok.
+	select * from patient where (patient.p_cost = '7')[0.4, 1]
 	
-	- Lấy AB có xác suất
-	select * from patient where (patient.bood = 'AB' )[0.4 , 0.8]
+	- Lấy p_cost = 7 và theo thuộc tính có thể đổi xác suất vẫn ok.
+	select * from patient where (patient.p_cost = '7')[0.4, 1]
 
-	- Lấy nhiều điều kiện
-	select * from patient where (patient.bood = 'AB' )[0.4 , 1]  or (patient.age = '23')[1, 1]
-	select name from patient where (patient.bood = 'AB' )[0.4 , 0.8]  or (patient.age = '23')[1, 1]
-	select name, age, address from patient where (patient.bood = 'AB' )[0.4 , 1]  and (patient.age = '23')[1, 1]
-	select * from employee1 where (name = 'Nguyễn Đình Sang')[1,1]
-	
-	- Lấy có chiến lược: chưa xong
-	select bood, age from patient where (patient.bood = 'AB'  ⊕_in patient.age = '23')[1, 1]
+	- Lấy 2 điều kiện chọn or.
+	select * from patient where (patient.p_cost = '7')[0.4, 1] or (patient.p_name = 'Blair')[1, 1] 	
+	- Lấy 2 điều kiện chọn sử dụng tuyển, kết quả như dùng or.
+	select * from patient where (patient.p_cost = '7' ⊕_in patient.p_name = 'Blair')[1, 1] 
+
+	- Lấy 2 điều kiện chọn and.
+	select * from patient where (patient.p_disease = 'cholecystitis')[0.5, 0.7] and (patient.p_name = 'Blair')[1, 1]
+	- dùng phép hội.
+	select * from patient where (patient.p_disease = 'cholecystitis' ⊗_in patient.p_name = 'Blair')[0.5, 0.7]
+
+	*** trường hợp muốn lên 3 điều kiện thì nên xài or, and đang bị lỗi.
+
+	- Các các phép với tập hợp.
+	select * from patient where (patient.p_disease = {hepatitis,cirrhosis})[0.2, 1]
+	select * from patient where (patient.p_disease  ⊇  {cholecystitis})[0.2, 1]
+	select * from patient where (patient.p_disease   ⊆  {hepatitis,cirrhosis,cholecystitis})[0.2, 1]
+	select * from patient where (patient.p_disease   ⊉  {cholecystitis})[0.2, 1]
+
 chiến lược:
 	2 cái trùng nhau thì hợp lại với nhau.
 	2 trung 2 cái khác thì cái trung hợp.
 	
+*** Biểu thức so sánh bằng giữa hai thuộc tính trên cùng một bộ
+equal_ig...
+select * 
+from employee2
+where (employee2.cmnd  EQUAL_in employee2.sdt)[0.4 , 1]
 
 6: Tích
 	- Full
@@ -69,13 +85,14 @@ sẽ chỉ có chiến lược tuyển với hội
 	from doctor
 
 union cứ trùng gộp rồi gộp xác suất.
-union chỉ có tuyển với hội.
-union  ⊗_in  ⊗_ig  ⊗_me  ⊕_ig  ⊕_in  ⊕_me 
+union chỉ có tuyển.
 
 5 giao: (lấy phần chung giữa 2 câu truy vấn)
 	SELECT Column_Name1, Column_Name2 ......., Column_NameN FROM Table1
 	INTERSECT
 	SELECT Column_Name1, Column_Name2 ......., Column_NameN FROM Table2
+giao chỉ dùng chiến lược hội.
+
 ví dụ bảng 1 (Sang Hải Phát)
 	bảng 2(Phát Hiếu)
 bảng 1
@@ -94,3 +111,7 @@ bảng 1 except bảng 2 = Sang Hải
 x là hội
 + tuyển
 - trừ
+
+equal thay bằng = + chiến lược
+chuyển > thành kí hiệu.
+cách trình bày như nhóm trước. cách chuyển mô hình lý thuyết sang vật lý.
