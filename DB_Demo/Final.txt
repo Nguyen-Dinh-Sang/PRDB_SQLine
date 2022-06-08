@@ -40,73 +40,73 @@ chiến lược:
 	2 trung 2 cái khác thì cái trung hợp.
 	
 *** Biểu thức so sánh bằng giữa hai thuộc tính trên cùng một bộ
-equal_ig...
-select * 
-from employee2
-where (employee2.cmnd  EQUAL_in employee2.sdt)[0.4 , 1]
+
+select d_name, d_identity, d_phone from doctor where (doctor.d_phone = ⊗_ig doctor.d_identity)[0.2 , 1]
+thay ⊕_in cũng ok.
 
 6: Tích
 	- Full
-	select * from employee1, employee2
+	select * from patient, doctor
 	- Có where
-	select p.name, p.age, d.name from patient p, doctor d where (p.age > 23)[0.2 , 1]
-	- Có chiến lược: chưa xong
-	select * from patient p, doctor d where (p.age > 20 ⊗_in d.name = 'Trần Minh Nhật')[0.2 , 1]
+	select p.p_id, p.p_name, p.p_age, d.d_id, d.d_name
+	from patient p, doctor d
+	where (p_age > 20 ⊗_in d_name = 'Oliver')[0.2, 1]
+	thêm or (d_phone = '012345')[0.2, 1]
 
 6: Kết
 	- kết qua where
-	select * from patient p, consultation c where (p.id  EQUAL_in c.id) [1,1]
-	select * from patient p, consultation c where (p.id  EQUAL_in c.id) [1,1] and (p.bood = 'AB')[0.5, 0.7]
-	- Join
-	select * from employee1 natural join in employee2
+	select * from patient p, doctor d where (p.p_id  EQUAL_in d.d_id)[1, 1]
+	select p.p_id, p.p_name, d.d_id, d.d_name
+	from patient p, doctor d 
+	where (p.p_id  EQUAL_in d.d_id)[1, 1] and (d.d_name = 'Leon')[1, 1]
+	- Join natural
+	select * from patient natural join in doctor
 	- Join thêm where kết hợp xác suất
-	select * from employee1 natural join in employee2 where (employee1.id  > '1')[1, 1]
+	select * from patient natural join in doctor where (p_name = 'Blair')[1, 1]
+
 *** ở đây demo phần tính xác suất theo lý thuyết.
 sẽ chỉ có chiến lược tuyển với hội
 
 7: Hợp
 	- Lấy full
-	select name
+	select p_name
 	from patient
 	union all 
-	select name
+	select d_name
 	from doctor
 	- Dùng thêm các điều kiện lọc
-	select name
+	select p_name
 	from patient
+	where (p_age > 30)[1, 1]
 	union all 
-	select name
+	select d_name
 	from doctor
-	- Theo chiến lược hội độc lập
-	select name
+	- Theo chiến lược tuyển độc lập
+	select p_name
 	from patient
-	union ⊗_in 
-	select name
+	union ⊕_in 
+	select d_name
 	from doctor
 
 union cứ trùng gộp rồi gộp xác suất.
 union chỉ có tuyển.
 
 5 giao: (lấy phần chung giữa 2 câu truy vấn)
-	SELECT Column_Name1, Column_Name2 ......., Column_NameN FROM Table1
-	INTERSECT
-	SELECT Column_Name1, Column_Name2 ......., Column_NameN FROM Table2
+	
+select p_name
+from patient
+intersect ⊗_ig 
+select d_name
+from doctor
+
 giao chỉ dùng chiến lược hội.
 
-ví dụ bảng 1 (Sang Hải Phát)
-	bảng 2(Phát Hiếu)
-bảng 1
-intersect
-bảng 2 
-= Phát (1 Dòng)
-(Lấy phần chung)
-
 6 trừ:EXCEPT
-ví dụ bảng 1 (Sang Hải Phát)
-	bảng 2(Phát Hiếu)
-
-bảng 1 except bảng 2 = Sang Hải
-(Lấy những phần tử bảng 1 không nằm trong bảng 2) 
+select p_name
+from patient
+except 
+select d_name
+from doctor
 
 x là hội
 + tuyển
@@ -114,4 +114,3 @@ x là hội
 
 equal thay bằng = + chiến lược
 chuyển > thành kí hiệu.
-cách trình bày như nhóm trước. cách chuyển mô hình lý thuyết sang vật lý.
