@@ -184,12 +184,15 @@ namespace PRDB_Sqlite.BLL
                 string[] temp = V.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
 
                 int j1, j2;
+
+                HandleValue handleValue = new HandleValue();
                 for (int i = 0; i < temp.Length; i++)
                 {
 
                     j1 = temp[i].IndexOf('{');
                     j2 = temp[i].IndexOf('}');
-                     values.Add(temp[i].Substring(j1 + 1, j2 - j1 - 1).Trim());
+                   
+                    values.AddRange(handleValue.stringToMultiValue(temp[i].Substring(j1 + 1, j2 - j1 - 1).Trim()));
 
                 }
                 
