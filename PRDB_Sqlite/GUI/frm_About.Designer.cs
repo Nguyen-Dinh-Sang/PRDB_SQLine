@@ -237,7 +237,7 @@
             this.MinimizeBox = false;
             this.Name = "frm_About";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About PRDB-Sqlite";
+            this.Text = "About URDB-Sqlite";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

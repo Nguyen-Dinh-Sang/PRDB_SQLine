@@ -636,7 +636,7 @@ namespace PRDB_Sqlite.GUI
         {
             try
             {
-                DialogResult result = MessageBox.Show("Are you sure want to exit?", "Exit PRDB Visual Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Are you sure want to exit?", "Exit URDB Visual Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
                     Application.Exit();
