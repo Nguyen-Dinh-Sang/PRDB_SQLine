@@ -1,0 +1,569 @@
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe.config
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.pdb
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_InputType.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_Main.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_edit_scheme.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_scheme.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Open_Scheme.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Rename_DB.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.Properties.Resources.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe.licenses
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.pdb
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_Scheme.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm__new_relation.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_relation.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_relation.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_relation.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.resx
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.cs
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.designer.cs
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_query.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_query.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_delete_query.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_query.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_About.resources
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\exit.ico
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\new relation.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\newdb.ico
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\open relation.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\opendb (2).ico
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove db d.ico
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove relation.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\save realtion.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\savedb (2).ico
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\Blue cube.ico
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query delete.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query new.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query open.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query save.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query add.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme open.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme edit.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme delete.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme add.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key-icon.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\attribute.png
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.bmp
+D:\KLTN\PrDB-Sqlite\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.BonusSkins.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Images.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Office.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Printing.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Export.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.SpellChecker.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Utils.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraBars.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraEditors.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraGrid.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraLayout.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraNavBar.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraPrinting.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraRichEdit.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.Desktop.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Extensions.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraSpellChecker.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraTreeList.v21.2.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.Linq.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Office.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Utils.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraBars.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraPrinting.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraGrid.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraLayout.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraNavBar.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraRichEdit.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.Desktop.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Extensions.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraTreeList.v21.2.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.AssemblyReference.cache
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_InputType.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_Main.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm__new_relation.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_About.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_delete_query.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_relation.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_Scheme.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_edit_scheme.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_query.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_scheme.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_query.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_relation.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Open_Scheme.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Rename_DB.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_query.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_relation.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.Properties.Resources.resources
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.GenerateResource.cache
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe.licenses
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.CoreCompileInputs.cache
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.pdb
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\attribute.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\Blue cube.ico
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\exit.ico
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key-icon.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.bmp
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\new relation.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\newdb.ico
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\open relation.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\opendb (2).ico
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query delete.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query new.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query open.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query save.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query add.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove db d.ico
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove relation.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\save realtion.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\savedb (2).ico
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme open.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme edit.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme delete.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme add.png
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.resx
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.cs
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.designer.cs
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe.config
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.pdb
+D:\KLTN\PRDB Visual Management System 130918\PRDB Source Codes\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.CopyComplete
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\attribute.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\Blue cube.ico
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\exit.ico
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key-icon.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.bmp
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\new relation.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\newdb.ico
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\open relation.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\opendb (2).ico
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query delete.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query new.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query open.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query save.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query add.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove db d.ico
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove relation.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\save realtion.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\savedb (2).ico
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme open.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme edit.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme delete.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme add.png
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.resx
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.cs
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.designer.cs
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe.config
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.pdb
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.BonusSkins.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Images.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Office.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Printing.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Export.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.SpellChecker.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Utils.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraBars.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraEditors.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraGrid.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraLayout.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraNavBar.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraPrinting.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraRichEdit.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.Desktop.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Extensions.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraSpellChecker.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraTreeList.v21.2.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.Linq.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Office.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Utils.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraBars.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraPrinting.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraGrid.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraLayout.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraNavBar.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraRichEdit.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.Desktop.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Extensions.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraTreeList.v21.2.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Office.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.RichEdit.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraPrinting.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraGrid.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraLayout.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraNavBar.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraRichEdit.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraTreeList.v21.2.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.AssemblyReference.cache
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_InputType.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_Main.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm__new_relation.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_About.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_delete_query.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_relation.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_Scheme.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_edit_scheme.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_query.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_scheme.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_query.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_relation.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Open_Scheme.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Rename_DB.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_query.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_relation.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.Properties.Resources.resources
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.GenerateResource.cache
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe.licenses
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.CoreCompileInputs.cache
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.CopyComplete
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe
+D:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.pdb
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\attribute.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\Blue cube.ico
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\exit.ico
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key-icon.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.bmp
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\key.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\new relation.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\newdb.ico
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\open relation.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\opendb (2).ico
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query delete.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query new.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query open.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query save.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\query add.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove db d.ico
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\remove relation.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\save realtion.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\savedb (2).ico
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme open.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme edit.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme delete.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\Images\scheme add.png
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.resx
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.cs
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\GUI\frm_new_scheme.designer.cs
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe.config
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.exe
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\PRDB_Sqlite.pdb
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Printing.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Office.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.RichEdit.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.SpellChecker.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Utils.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraBars.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraEditors.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraPrinting.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraGrid.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraLayout.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraNavBar.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraRichEdit.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.Desktop.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraScheduler.v21.2.Extensions.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraSpellChecker.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.XtraTreeList.v21.2.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\System.Data.SQLite.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Pdf.v21.2.Drawing.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\DevExpress.Sparkline.v21.2.Core.xml
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Data.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Data.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Data.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Data.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Pdf.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Printing.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Printing.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Printing.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Printing.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Office.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Office.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Office.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Office.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.RichEdit.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.RichEdit.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.RichEdit.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.RichEdit.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Utils.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Utils.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Utils.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Utils.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraBars.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraBars.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraBars.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraBars.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraEditors.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraEditors.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraEditors.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraEditors.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraPrinting.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraPrinting.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraPrinting.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraPrinting.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraGrid.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraGrid.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraGrid.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraGrid.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraLayout.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraLayout.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraLayout.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraLayout.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraNavBar.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraNavBar.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraNavBar.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraNavBar.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraRichEdit.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraRichEdit.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraRichEdit.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraRichEdit.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraScheduler.v21.2.Extensions.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraSpellChecker.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraSpellChecker.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraSpellChecker.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraSpellChecker.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.XtraTreeList.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.XtraTreeList.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.XtraTreeList.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.XtraTreeList.v21.2.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\de\DevExpress.Sparkline.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\es\DevExpress.Sparkline.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ja\DevExpress.Sparkline.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\bin\Debug\ru\DevExpress.Sparkline.v21.2.Core.resources.dll
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csprojAssemblyReference.cache
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_InputType.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.Form_Main.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm__new_relation.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_About.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_delete_query.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_relation.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Delete_Scheme.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_edit_scheme.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_query.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_new_scheme.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_query.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_open_relation.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Open_Scheme.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_Rename_DB.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_query.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.GUI.frm_rename_relation.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.Properties.Resources.resources
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.GenerateResource.cache
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe.licenses
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.CoreCompileInputs.cache
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.csproj.CopyComplete
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.exe
+H:\KLTN\PRDB_Sqlite\PRDB_Sqlite\obj\x86\Debug\PRDB_Sqlite.pdb
