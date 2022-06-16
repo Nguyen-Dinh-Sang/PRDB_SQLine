@@ -566,7 +566,7 @@
             this.barButtonItem_Hoi_Ignor.Appearance.Options.UseFont = true;
             this.barButtonItem_Hoi_Ignor.AppearanceDisabled.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonItem_Hoi_Ignor.AppearanceDisabled.Options.UseFont = true;
-            this.barButtonItem_Hoi_Ignor.Caption = "⊕_ig (ignorance)";
+            this.barButtonItem_Hoi_Ignor.Caption = "⊗_ig (ignorance)";
             this.barButtonItem_Hoi_Ignor.Id = 26;
             this.barButtonItem_Hoi_Ignor.Name = "barButtonItem_Hoi_Ignor";
             this.barButtonItem_Hoi_Ignor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Hoi_Ignor_ItemClick);
